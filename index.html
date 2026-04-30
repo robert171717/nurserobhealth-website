@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nurse Rob, RN — Licensed Peptide Educator & Consultant</title>
+<meta name="description" content="Nurse Rob, RN provides educational peptide consulting. Licensed registered nurse. No bro-science. Research-backed. 1-on-1 consultations and free resources.">
+<meta property="og:title" content="Nurse Rob, RN — Licensed Peptide Educator">
+<meta property="og:description" content="Your licensed clinical guide through the peptide landscape. Book a consultation or get the free Wolverine Stack Calculator.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nurserobhealth.com">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nurse Rob, RN — Licensed Peptide Educator">
+<meta name="twitter:description" content="Licensed RN. Peptide education. No bro-science. Real clinical knowledge.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%AC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        navy: { 950: '#080E1A', 900: '#0A1F3F', 800: '#0D2B54' },
+        teal: { DEFAULT: '#00C4B4', dark: '#009E91' },
+        gold: '#C9A84C',
+        cream: '#FFF8F0',
+        muted: '#64748B',
+        body: '#1E293B',
+        offwhite: '#F7F9FB'
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace']
+      }
+    }
+  }
+};
+</script>
+<style>
+:root { --navy-950: #080E1A; --navy-900: #0A1F3F; --navy-800: #0D2B54; --teal: #00C4B4; --teal-dark: #009E91; --gold: #C9A84C; --cream: #FFF8F0; --off-white: #F7F9FB; --body: #1E293B; --muted: #64748B; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { margin: 0; overflow-x: hidden; background: #FFFFFF; color: var(--body); font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+#hero-canvas { display: block; width: 100%; height: 100%; background: #0A1F3F; }
+.hero-scrim { background: radial-gradient(circle at 50% 38%, rgba(0, 196, 180, 0.18), rgba(10, 31, 63, 0.08) 36%, rgba(8, 14, 26, 0.70) 82%), linear-gradient(180deg, rgba(8, 14, 26, 0.06), rgba(8, 14, 26, 0.78)); }
+.section-reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1); }
+.section-reveal.visible { opacity: 1; transform: translateY(0); }
+body.menu-open { overflow: hidden; }
+.mobile-menu-panel { display: none !important; }
+.mobile-menu-panel.open { display: flex !important; }
+</style>
+</head>
+<body class="font-sans antialiased bg-white text-body">
+
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-teal focus:text-white focus:rounded-full">Skip to content</a>
+
+<!-- NAV -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-navy-900/20 backdrop-blur-xl border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between" style="height:72px">
+    <a href="#hero" class="text-white font-bold text-lg flex items-center gap-1" aria-label="Nurse Rob, RN home">
+      Nurse <span class="border-b-2 border-teal">Rob</span>, RN
+    </a>
+    <div class="hidden md:flex items-center gap-6">
+      <a href="#about" class="text-white/70 hover:text-white transition text-sm font-medium">About</a>
+      <a href="#services" class="text-white/70 hover:text-white transition text-sm font-medium">Services</a>
+      <a href="#resources" class="text-white/70 hover:text-white transition text-sm font-medium">Resources</a>
+      <a href="#services" class="bg-teal hover:bg-teal-dark text-white font-semibold px-5 py-2.5 rounded-full text-sm hover:scale-105 transition-all duration-200">Book a Consult →</a>
+    </div>
+    <button id="menu-btn" class="md:hidden flex items-center justify-center w-11 h-11 text-white" aria-label="Open menu" aria-expanded="false">
+      <span class="flex flex-col gap-1.5"><span class="block w-6 h-0.5 bg-white rounded-full"></span><span class="block w-6 h-0.5 bg-white rounded-full"></span><span class="block w-6 h-0.5 bg-white rounded-full"></span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="mobile-menu-panel fixed inset-0 bg-navy-900 backdrop-blur-xl z-[60] flex flex-col items-center justify-center gap-8 md:hidden" role="dialog" aria-hidden="true">
+  <button id="menu-close" class="absolute top-6 right-6 w-11 h-11 flex items-center justify-center text-white text-3xl leading-none" aria-label="Close menu">×</button>
+  <a href="#about" class="text-white text-xl font-medium menu-link">About</a>
+  <a href="#services" class="text-white text-xl font-medium menu-link">Services</a>
+  <a href="#resources" class="text-white text-xl font-medium menu-link">Resources</a>
+  <a href="#services" class="bg-teal hover:bg-teal-dark text-white font-semibold px-8 py-3 rounded-full text-lg menu-link">Book a Consult →</a>
+</div>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section id="hero" class="clinical-grid relative min-h-screen min-h-[100dvh] flex items-center justify-center overflow-hidden bg-navy-900">
+  <canvas id="hero-canvas" class="absolute inset-0 z-0 w-full h-full" aria-hidden="true"></canvas>
+  <div class="hero-scrim absolute inset-0 z-[1] pointer-events-none"></div>
+  <div class="absolute inset-x-0 bottom-0 z-[2] h-40 bg-gradient-to-t from-navy-900/80 to-transparent pointer-events-none"></div>
+
+  <div class="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto py-28">
+    <div class="section-reveal inline-block px-4 py-1.5 rounded-full border border-teal/30 bg-teal/10 text-teal text-sm font-medium mb-7 shadow-[0_0_20px_rgba(0,196,180,0.15)]">
+      🧬 Licensed RN · Peptide Educator
+    </div>
+
+    <h1 class="section-reveal hero-title text-5xl sm:text-6xl md:text-8xl font-extrabold text-white tracking-tight leading-tight mb-6">
+      Nurse <span class="border-b-2 border-teal">Rob</span>, RN
+    </h1>
+
+    <p class="section-reveal text-white/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
+      Your licensed clinical guide through the peptide landscape. No bro-science. No hype. Just real knowledge from a nurse who reads the actual research.
+    </p>
+
+    <div class="section-reveal flex flex-col sm:flex-row gap-4 justify-center mb-8">
+      <a href="#services" class="bg-teal hover:bg-teal-dark text-white font-semibold px-8 py-4 rounded-full text-lg hover:scale-105 hover:shadow-[0_0_30px_rgba(0,196,180,0.3)] transition-all duration-200">
+        Book a Consult →
+      </a>
+      <a href="#resources" class="border-2 border-white/30 hover:border-white text-white font-semibold px-8 py-4 rounded-full text-lg hover:bg-white hover:text-navy-900 transition-all duration-200">
+        Get Free Calc →
+      </a>
+    </div>
+
+    <p class="section-reveal text-white/50 text-sm">🧬 Licensed RN · 📋 100+ Reviews · 🔬 Research-Backed</p>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section id="trust" class="bg-off-white relative">
+  <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-teal to-transparent"></div>
+  <div class="max-w-6xl mx-auto px-6 py-16 md:py-20 text-center">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="section-reveal">
+        <div class="text-teal text-3xl mb-3">🛡️</div>
+        <h4 class="text-navy-900 font-semibold text-lg mb-2">Licensed RN</h4>
+        <p class="text-muted text-sm leading-relaxed">Active registered nurse license. Real clinical training, not internet research.</p>
+      </div>
+      <div class="section-reveal">
+        <div class="text-teal text-3xl mb-3">📋</div>
+        <h4 class="text-navy-900 font-semibold text-lg mb-2">100+ Protocols</h4>
+        <p class="text-muted text-sm leading-relaxed">Over 100 peptide protocols reviewed with a clinical lens. Safety first, always.</p>
+      </div>
+      <div class="section-reveal">
+        <div class="text-teal text-3xl mb-3">🔬</div>
+        <h4 class="text-navy-900 font-semibold text-lg mb-2">Research-Backed</h4>
+        <p class="text-muted text-sm leading-relaxed">Every recommendation grounded in published literature. I read the studies.</p>
+      </div>
+      <div class="section-reveal">
+        <div class="text-teal text-3xl mb-3">🏥</div>
+        <h4 class="text-navy-900 font-semibold text-lg mb-2">Education First</h4>
+        <p class="text-muted text-sm leading-relaxed">My goal: you understand what you're putting in your body. Knowledge over hype.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT (License line removed) -->
+<section id="about" class="bg-white">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="section-reveal">
+        <p class="text-teal text-sm font-semibold uppercase tracking-wider mb-4">ABOUT</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-navy-900 leading-tight mb-8">Why an RN is different from a "biohacking guru"</h2>
+        <div class="space-y-5 text-body leading-relaxed text-base md:text-lg">
+          <p>I'm Nurse Rob — a licensed registered nurse who got tired of watching people inject substances they didn't fully understand. The peptide space is full of influencers who've never set foot in a hospital, never read a clinical trial cover-to-cover, and never had a patient's safety on their conscience.</p>
+          <p>My training includes pharmacology, pathophysiology, and years of direct patient care. When I evaluate a peptide protocol, I'm looking at it through the same clinical lens I'd use for any treatment plan: What does the evidence actually show? What are the real risks? What are we still unsure about?</p>
+          <p>I'm not here to sell you peptides. I'm here to help you understand them — safely, honestly, and based on real science.</p>
+        </div>
+        <p class="mt-8 italic text-navy-800 text-lg">— Nurse Rob, RN</p>
+      </div>
+
+      <div class="section-reveal bg-navy-800 rounded-2xl p-8 border border-gold/30 text-center">
+        <div class="text-teal text-5xl mb-4">🏥</div>
+        <h3 class="text-white font-bold tracking-wider text-xl mb-3">REGISTERED NURSE</h3>
+        <p class="text-muted text-sm leading-relaxed">State of Arizona<br>License Active · In Good Standing</p>
+        <hr class="border-gold/30 my-6">
+        <p class="text-white/80 italic text-sm">"I don't prescribe. I educate. There's a difference."</p>
+        <p class="text-white/50 text-sm mt-2">— Nurse Rob, RN</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="bg-navy-800">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
+    <div class="section-reveal text-center mb-16">
+      <p class="text-teal text-sm font-semibold uppercase tracking-wider mb-3">SERVICES</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">How I Can Help You</h2>
+      <p class="text-white/60 max-w-md mx-auto leading-relaxed">Educational consulting from a licensed clinical professional.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <!-- Card 1 -->
+      <div class="section-reveal bg-navy-900 rounded-2xl p-8 border border-white/5 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 flex flex-col">
+        <div class="text-teal text-4xl mb-4">🩺</div>
+        <h3 class="text-white font-semibold text-2xl mb-2">1-on-1 Peptide Protocol Review</h3>
+        <p class="text-gold text-xl font-semibold mb-6">$197 · 30 Minutes</p>
+        <ul class="text-white/80 space-y-3 mb-8 text-sm">
+          <li class="flex items-start gap-2"><span class="text-teal mt-0.5">•</span> Full stack safety review</li>
+          <li class="flex items-start gap-2"><span class="text-teal mt-0.5">•</span> Blood work marker guidance</li>
+          <li class="flex items-start gap-2"><span class="text-teal mt-0.5">•</span> Dosing & timing optimization</li>
+          <li class="flex items-start gap-2"><span class="text-teal mt-0.5">•</span> Drug interaction screening</li>
+          <li class="flex items-start gap-2"><span class="text-teal mt-0.5">•</span> Personalized written summary</li>
+        </ul>
+        <div class="mt-auto">
+          <a href="mailto:nurse@nurserobhealth.com?subject=Book%20Peptide%20Protocol%20Review" class="inline-block bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 hover:scale-105">Book Your Session →</a>
+          <p class="text-muted text-xs mt-4 leading-relaxed">⚠️ Educational consulting. Not medical advice. No provider-patient relationship.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="section-reveal bg-navy-900 rounded-2xl p-8 border border-white/5 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 flex flex-col">
+        <div class="text-teal text-4xl mb-4">👥</div>
+        <h3 class="text-white font-semibold text-2xl mb-2">90-Day Peptide Mastery Group</h3>
+        <p class="text-gold text-xl font-semibold mb-6">$997 · Per Quarter</p>
+        <ul class="text-white/80 space-y-3 mb-8 text-sm">
+          <li class="flex items-start gap-2"><span class="text-teal mt-0.5">•</span> Monthly live group call</li>
+          <li class="flex items-start gap-2"><span class="text-teal mt-0.5">•</span> Private community Discord</li>
+          <li class="flex items-start gap-2"><span class="text-teal mt-0.5">•</span> Group protocol reviews</li>
+          <li class="flex items-start gap-2"><span class="text-teal mt-0.5">•</span> Accountability partner matching</li>
+          <li class="flex items-start gap-2"><span class="text-teal mt-0.5">•</span> First access to new guides & tools</li>
+        </ul>
+        <div class="mt-auto">
+          <a href="mailto:nurse@nurserobhealth.com?subject=Apply%20to%2090-Day%20Peptide%20Mastery%20Group" class="inline-block border-2 border-teal text-teal hover:bg-teal hover:text-white font-semibold px-6 py-3 rounded-full transition-all duration-200">Apply to Join →</a>
+          <p class="text-muted text-xs mt-4 leading-relaxed">⚠️ Educational consulting. Not medical advice. No provider-patient relationship.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD MAGNET -->
+<section id="resources" class="bg-cream">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="section-reveal">
+        <div class="bg-white rounded-2xl shadow-lg p-6 max-w-sm mx-auto relative border border-navy-900/5">
+          <span class="absolute top-4 left-4 bg-gold/20 text-navy-900 text-xs font-semibold px-2 py-1 rounded-full">⭐ Free Resource</span>
+          <span class="absolute top-4 right-4 text-muted text-xs">Nurse Rob, RN</span>
+          <h3 class="text-navy-900 font-bold text-lg mt-8 mb-1">WOLVERINE STACK</h3>
+          <h3 class="text-navy-900 font-bold text-lg mb-3">CALCULATOR</h3>
+          <hr class="border-teal mb-5">
+
+          <form id="calculator-form">
+            <div class="space-y-4">
+              <div>
+                <label class="text-navy-800 text-xs font-medium block mb-1">Age</label>
+                <input type="number" id="age" value="35" class="w-full bg-off-white rounded px-3 py-2 text-sm text-body border border-gray-200 focus:border-teal">
+              </div>
+              <div>
+                <label class="text-navy-800 text-xs font-medium block mb-1">Weight (lbs)</label>
+                <input type="number" id="weight" value="185" class="w-full bg-off-white rounded px-3 py-2 text-sm text-body border border-gray-200 focus:border-teal">
+              </div>
+              <div>
+                <label class="text-navy-800 text-xs font-medium block mb-1">Primary Goal</label>
+                <select id="goal" class="w-full bg-off-white rounded px-3 py-2 text-sm text-body border border-gray-200 focus:border-teal">
+                  <option value="Muscle Building">Muscle Building</option>
+                  <option value="Fat Loss">Fat Loss</option>
+                  <option value="Recovery">Recovery</option>
+                  <option value="Longevity">Longevity</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-navy-800 text-xs font-medium block mb-1">Experience Level</label>
+                <select id="experience" class="w-full bg-off-white rounded px-3 py-2 text-sm text-body border border-gray-200 focus:border-teal">
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate" selected>Intermediate</option>
+                  <option value="Advanced">Advanced</option>
+                </select>
+              </div>
+              <button type="submit" class="w-full bg-teal hover:bg-teal-dark text-white font-semibold px-4 py-3 rounded-full text-sm transition">GENERATE MY STACK →</button>
+            </div>
+          </form>
+
+          <div id="calc-result" class="hidden mt-5 p-4 bg-off-white rounded-xl">
+            <p class="text-navy-900 font-semibold text-sm mb-2">Your Personalized Protocol:</p>
+            <div id="result-text" class="font-mono text-xs text-navy-800 space-y-1"></div>
+            <p class="text-muted text-xs mt-3">⚠️ Educational tool only. Not medical advice.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-reveal">
+        <span class="inline-block bg-teal/10 text-teal text-xs rounded-full px-3 py-1 font-medium mb-4">🧬 Free Resource</span>
+        <h2 class="text-4xl md:text-5xl font-bold text-navy-900 leading-tight mb-6">The Wolverine Stack Calculator</h2>
+        <p class="text-body leading-relaxed mb-6 text-base md:text-lg">Input your age, weight, and goals. Get a personalized peptide research protocol — built by a licensed RN, not a Reddit thread.</p>
+        <ul class="space-y-3 mb-8 text-navy-800">
+          <li class="flex items-center gap-2"><span class="text-teal">✓</span> Personalized to your goals</li>
+          <li class="flex items-center gap-2"><span class="text-teal">✓</span> Research-backed recommendations</li>
+          <li class="flex items-center gap-2"><span class="text-teal">✓</span> 12-page PDF guide included</li>
+          <li class="flex items-center gap-2"><span class="text-teal">✓</span> Free — instant download</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="bg-white">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
+    <div class="section-reveal text-center mb-16">
+      <p class="text-teal text-sm font-semibold uppercase tracking-wider mb-3">TESTIMONIALS</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-navy-900 leading-tight mb-4">What People Are Saying</h2>
+      <p class="text-muted">Real feedback. No fake reviews.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div class="section-reveal bg-off-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+        <div class="text-gold text-lg mb-4" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="italic text-body leading-relaxed mb-6">"I'd been piecing together Reddit advice for months. Nurse Rob reviewed my entire stack and pointed out an interaction I'd completely missed. Having a licensed professional look at this stuff is night and day different from forum advice."</p>
+        <p class="text-navy-800 font-medium">— Jason M.</p>
+        <p class="text-muted text-sm">Peptide User</p>
+      </div>
+
+      <div class="section-reveal bg-off-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+        <div class="text-gold text-lg mb-4" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="italic text-body leading-relaxed mb-6">"What sets him apart is he actually reads the research. He sent me the specific study he was referencing. Not once did he push anything on me — just gave me the data and let me decide. That's exactly what I wanted."</p>
+        <p class="text-navy-800 font-medium">— David K.</p>
+        <p class="text-muted text-sm">Biohacker</p>
+      </div>
+
+      <div class="section-reveal bg-off-white rounded-2xl p-8 border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+        <div class="text-gold text-lg mb-4" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="italic text-body leading-relaxed mb-6">"I was nervous about starting peptides. Nurse Rob walked me through what the research shows, what we don't know yet, and what to watch for. His clinical background is obvious — he thinks about safety the way a nurse would, not a salesman."</p>
+        <p class="text-navy-800 font-medium">— Chris T.</p>
+        <p class="text-muted text-sm">Health Optimizer</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer id="contact" class="bg-navy-900 pt-20 pb-10">
+  <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-16">
+    <div class="grid md:grid-cols-3 gap-10 mb-12">
+      <div>
+        <h3 class="text-white font-bold text-xl mb-1">Nurse <span class="border-b-2 border-teal">Rob</span>, RN</h3>
+        <p class="text-muted text-sm mt-2 leading-relaxed">Your licensed clinical guide through the peptide landscape.</p>
+        <div class="flex gap-4 mt-4 text-white/50 text-xl">
+          <a href="#" aria-label="LinkedIn" class="hover:text-teal transition">in</a>
+          <a href="mailto:nurse@nurserobhealth.com" aria-label="Email" class="hover:text-teal transition">✉</a>
+          <a href="https://x.com/RealSolanaMeme" aria-label="X (Twitter)" class="hover:text-teal transition">𝕏</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+        <div class="space-y-2 text-white/70 text-sm">
+          <p><a href="#about" class="hover:text-teal transition">About</a></p>
+          <p><a href="#services" class="hover:text-teal transition">Services</a></p>
+          <p><a href="#resources" class="hover:text-teal transition">Resources</a></p>
+          <p><a href="#contact" class="hover:text-teal transition">Contact</a></p>
+          <p><a href="#privacy" class="hover:text-teal transition">Privacy Policy</a></p>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-4">Contact</h4>
+        <p class="text-white/70 text-sm"><a href="mailto:nurse@nurserobhealth.com" class="hover:text-teal transition">nurse@nurserobhealth.com</a></p>
+        <p class="text-muted text-sm mt-1">Mesa, Arizona</p>
+      </div>
+    </div>
+
+    <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between text-muted text-xs gap-2">
+      <p>© 2026 Nurse Rob, RN. All rights reserved.</p>
+      <p>Built with clinical precision. Not medical advice.</p>
+    </div>
+
+    <!-- Privacy Policy Section -->
+    <div id="privacy" class="mt-12 max-w-3xl">
+      <h4 class="text-white font-semibold mb-3">Privacy Policy</h4>
+      <p class="text-muted text-xs leading-relaxed">Nurse Rob, RN respects your privacy. We collect only the minimum information necessary to provide educational consulting services (name, email, and relevant health history when you book a consultation). We never sell or share your data with third parties. All communications are confidential. You may request deletion of your data at any time by emailing nurse@nurserobhealth.com. This site uses no tracking cookies or third-party analytics.</p>
+    </div>
+
+    <!-- Full Legal Disclaimer -->
+    <div class="mt-8 max-w-3xl">
+      <p class="text-white/80 text-sm font-semibold mb-2">⚠️ DISCLAIMER</p>
+      <p class="text-muted text-xs leading-relaxed">Nurse Rob, RN provides educational consulting services only. No content on this website, in any consultation, or in any communication constitutes medical advice, diagnosis, or treatment. No provider-patient relationship is established through use of this website, consultation booking, or content consumption. Peptides discussed are for research purposes. Always consult your licensed physician before starting, stopping, or modifying any health regimen. Individual results vary. The information provided is not evaluated by the FDA.</p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-12 h-12 bg-teal hover:bg-teal-dark text-white rounded-full shadow-lg flex items-center justify-center text-xl transition-all duration-200">↑</button>
+
+<script>
+// Complete working JavaScript
+(function() {
+  // Canvas
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let mouse = { x: null, y: null };
+
+  function setCanvasSize() {
+    const rect = canvas.getBoundingClientRect();
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.floor(rect.width * dpr);
+    canvas.height = Math.floor(rect.height * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    initParticles(rect.width, rect.height);
+  }
+
+  function initParticles(width, height) {
+    particles = [];
+    const count = window.innerWidth < 768 ? 45 : 100;
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6,
+        radius: Math.random() * 1.5 + 1.5,
+        opacity: Math.random() * 0.25 + 0.15
+      });
+    }
+  }
+
+  function animate() {
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+    ctx.clearRect(0, 0, width, height);
+
+    for (let p of particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0) p.x = width;
+      if (p.x > width) p.x = 0;
+      if (p.y < 0) p.y = height;
+      if (p.y > height) p.y = 0;
+
+      if (mouse.x !== null && mouse.y !== null) {
+        const dx = mouse.x - p.x;
+        const dy = mouse.y - p.y;
+        const dist = Math.hypot(dx, dy);
+        if (dist < 200) {
+          p.vx += dx * 0.0002;
+          p.vy += dy * 0.0002;
+        }
+      }
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(0, 196, 180, ${p.opacity})`;
+      ctx.fill();
+    }
+
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const d = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+        if (d < 100) {
+          ctx.strokeStyle = `rgba(0, 196, 180, ${(1 - d / 100) * 0.3})`;
+          ctx.lineWidth = 0.5;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(animate);
+  }
+
+  function updateMouse(clientX, clientY) {
+    const r = canvas.getBoundingClientRect();
+    mouse.x = clientX - r.left;
+    mouse.y = clientY - r.top;
+  }
+
+  window.addEventListener('resize', () => setTimeout(setCanvasSize, 100));
+  canvas.addEventListener('mousemove', e => updateMouse(e.clientX, e.clientY));
+  canvas.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
+  canvas.addEventListener('touchmove', e => {
+    e.preventDefault();
+    const t = e.touches[0];
+    updateMouse(t.clientX, t.clientY);
+  }, { passive: false });
+  canvas.addEventListener('touchend', () => { mouse.x = null; mouse.y = null; });
+
+  setCanvasSize();
+  animate();
+
+  // Navbar + Back to Top
+  const navbar = document.getElementById('navbar');
+  const hero = document.getElementById('hero');
+  const backToTop = document.getElementById('back-to-top');
+
+  window.addEventListener('scroll', () => {
+    const pastHero = window.scrollY > hero.offsetHeight - 72;
+    navbar.classList.toggle('bg-navy-900/95', pastHero);
+    navbar.classList.toggle('bg-navy-900/20', !pastHero);
+    backToTop.classList.toggle('show', window.scrollY > hero.offsetHeight);
+  });
+
+  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Mobile Menu
+  const menuBtn = document.getElementById('menu-btn');
+  const menuClose = document.getElementById('menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.add('open');
+    document.body.classList.add('menu-open');
+  });
+  menuClose.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    document.body.classList.remove('menu-open');
+  });
+
+  // DYNAMIC WOLVERINE CALCULATOR
+  const calcForm = document.getElementById('calculator-form');
+  const calcResult = document.getElementById('calc-result');
+  const resultText = document.getElementById('result-text');
+
+  if (calcForm) {
+    calcForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const age = parseInt(document.getElementById('age').value);
+      const weight = parseInt(document.getElementById('weight').value);
+      const goal = document.getElementById('goal').value;
+      const experience = document.getElementById('experience').value;
+
+      let bpc = "250mcg";
+      let tb = "2.5mg";
+      let frequency = "2x daily";
+
+      if (goal === "Fat Loss") {
+        bpc = "200mcg";
+        frequency = "2x daily";
+      } else if (goal === "Recovery") {
+        bpc = "300mcg";
+        tb = "5mg";
+      } else if (goal === "Longevity") {
+        bpc = "200mcg";
+        frequency = "1x daily";
+      }
+
+      if (experience === "Beginner") {
+        bpc = Math.round(parseInt(bpc) * 0.8) + "mcg";
+      } else if (experience === "Advanced") {
+        bpc = Math.round(parseInt(bpc) * 1.2) + "mcg";
+      }
+
+      if (weight > 200) {
+        tb = "5mg";
+      }
+
+      resultText.innerHTML = `
+        <div>BPC-157: <strong>${bpc} · ${frequency}</strong></div>
+        <div>TB-500: <strong>${tb} · 2x weekly</strong></div>
+        <div class="text-xs text-muted mt-2">Based on age ${age}, weight ${weight}lbs, goal: ${goal}</div>
+        <div class="mt-4 pt-4 border-t border-gray-200 email-capture">
+          <p class="text-navy-800 text-xs font-semibold mb-2">📧 Get the full 12-page PDF guide + your protocol</p>
+          <form id="email-capture-form" class="flex gap-2">
+            <input type="email" id="capture-email" placeholder="your@email.com" required class="flex-1 bg-white border border-gray-200 rounded-full px-3 py-2 text-xs outline-none focus:border-teal">
+            <button type="submit" class="bg-teal hover:bg-teal-dark text-white font-semibold px-4 py-2 rounded-full text-xs whitespace-nowrap transition">Send My Guide →</button>
+          </form>
+          <p class="text-muted text-xs mt-2 email-disclaimer">📧 Your email is private. Educational resource — not medical advice.</p>
+        </div>
+      `;
+      calcResult.classList.remove('hidden');
+
+      // Email capture handler — POSTs to Formspree
+      const emailForm = document.getElementById('email-capture-form');
+      if (emailForm) {
+        emailForm.addEventListener('submit', async function(ev) {
+          ev.preventDefault();
+          const captureEmail = document.getElementById('capture-email').value;
+          const captureDiv = emailForm.closest('.email-capture');
+          const btn = emailForm.querySelector('button');
+          
+          // Show sending state
+          btn.textContent = 'Sending...';
+          btn.disabled = true;
+
+          try {
+            const res = await fetch('https://formspree.io/f/xnjwaowp', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                email: captureEmail,
+                message: `Wolverine Stack Calculator Result\n—\nBPC-157: ${bpc} · ${frequency}\nTB-500: ${tb} · 2x weekly\nAge: ${age} | Weight: ${weight}lbs | Goal: ${goal} | Experience: ${experience}\n—\nSent from nurserobhealth.com`
+              })
+            });
+
+            if (res.ok) {
+              captureDiv.innerHTML = `
+                <div class="text-green-600 text-sm font-semibold">✅ Check your inbox!</div>
+                <p class="text-navy-800 text-xs mt-1">Your Wolverine Stack Calculator + 12-page PDF guide is on its way to <strong>${captureEmail}</strong>.</p>
+                <p class="text-muted text-xs mt-2">📧 Your email is private. Educational resource — not medical advice.</p>
+              `;
+            } else {
+              throw new Error('Formspree rejected');
+            }
+          } catch (err) {
+            captureDiv.innerHTML = `
+              <div class="text-red-500 text-sm font-semibold">⚠️ Something went wrong.</div>
+              <p class="text-navy-800 text-xs mt-1">Please try again or email us directly at <a href="mailto:nurse@nurserobhealth.com" class="text-teal underline">nurse@nurserobhealth.com</a>.</p>
+            `;
+          }
+        });
+      }
+    });
+  }
+
+  // Scroll reveals
+  const reveals = document.querySelectorAll('.section-reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+})();
+</script>
+
+</body>
+</html>
