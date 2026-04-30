@@ -609,6 +609,26 @@ body.menu-open { overflow: hidden; }
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
 })();
+
+  // ── Mailto fallback for desktop browsers without email client ──
+  document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var email = link.getAttribute('href').replace('mailto:', '').split('?')[0];
+      // Try mailto first (works if email client configured)
+      // If it fails after 1.5s, copy to clipboard
+      var fallbackTimer = setTimeout(function() {
+        navigator.clipboard.writeText(email).then(function() {
+          var toast = document.createElement('div');
+          toast.textContent = 'Copied: ' + email;
+          toast.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0A1F3F;color:#fff;padding:12px 24px;border-radius:999px;font-size:14px;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,0.3);animation:fadeIn 0.3s ease';
+          document.body.appendChild(toast);
+          setTimeout(function() { toast.style.opacity='0'; toast.style.transition='opacity 0.3s'; setTimeout(function() { toast.remove(); }, 300); }, 2000);
+        }).catch(function() {});
+      }, 1500);
+      // If mailto fires, cancel the fallback
+      window.addEventListener('focus', function() { clearTimeout(fallbackTimer); }, {once: true});
+    });
+  });
 </script>
 
 </body>
