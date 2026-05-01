@@ -270,6 +270,21 @@ body.menu-open { overflow: hidden; }
             <div id="result-text" class="font-mono text-xs text-navy-800 space-y-1"></div>
             <p class="text-muted text-xs mt-3">⚠️ Educational tool only. Not medical advice.</p>
           </div>
+
+          <!-- Success state: shown when returning from Formspree redirect -->
+          <div id="post-submit-success" class="hidden mt-5 p-5 bg-white border-2 border-teal/30 rounded-2xl text-center">
+            <div class="text-green-600 text-base font-semibold mb-2">✅ Your stack is ready!</div>
+            <p class="text-navy-800 text-xs mb-3">Your personalized protocol has been calculated and sent.</p>
+            <div class="p-3 bg-off-white rounded-xl mb-3">
+              <p class="text-navy-800 text-xs font-semibold mb-2">📥 Download your full 7-page guide:</p>
+              <a href="/guide.pdf" target="_blank" class="inline-block bg-teal hover:bg-teal-dark text-white font-semibold px-5 py-2.5 rounded-full text-sm transition">Download Wolverine Stack Guide →</a>
+              <p class="text-muted text-xs mt-2">Educational resource — not medical advice.</p>
+            </div>
+            <div class="border-t border-gray-200 pt-3">
+              <p class="text-navy-800 text-xs font-semibold mb-2">Want a licensed RN to review your full stack?</p>
+              <a href="https://cal.com/nurserob/peptide-consult" target="_blank" rel="noopener" class="inline-block bg-teal hover:bg-teal-dark text-white font-semibold px-5 py-2.5 rounded-full text-sm transition">📅 Book a 1-on-1 Consult ($197) →</a>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -586,6 +601,18 @@ body.menu-open { overflow: hidden; }
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
 })();
+
+  // ── Show success state when returning from Formspree ──
+  if (window.location.search.includes('thanks=true')) {
+    var successDiv = document.getElementById('post-submit-success');
+    if (successDiv) {
+      successDiv.classList.remove('hidden');
+      successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Clean the URL without reloading
+      var cleanUrl = window.location.pathname;
+      window.history.replaceState({}, '', cleanUrl);
+    }
+  }
 
   // ── Mailto fallback for desktop browsers without email client ──
   document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
