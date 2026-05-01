@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#080E1A"/>
+      <stop offset="100%" style="stop-color:#0D2B54"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00C4B4;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#00C4B4;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Subtle grid pattern -->
+  <g opacity="0.03" stroke="#00C4B4" stroke-width="1">
+    <line x1="0" y1="100" x2="1200" y2="100"/><line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/><line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/><line x1="0" y1="600" x2="1200" y2="600"/>
+    <line x1="200" y1="0" x2="200" y2="630"/><line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/><line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+  
+  <!-- Accent bar top -->
+  <rect width="1200" height="4" fill="url(#accent)"/>
+  
+  <!-- Molecular hexagons (decorative) -->
+  <g opacity="0.06" fill="none" stroke="#00C4B4" stroke-width="2">
+    <polygon points="120,315 155,295 190,315 190,355 155,375 120,355"/>
+    <polygon points="1060,280 1095,260 1130,280 1130,320 1095,340 1060,320"/>
+    <polygon points="180,200 200,188 220,200 220,224 200,236 180,224" transform="scale(0.7) translate(60,60)"/>
+  </g>
+  
+  <!-- Badge -->
+  <rect x="524" y="145" width="152" height="36" rx="18" fill="#00C4B4" fill-opacity="0.12" stroke="#00C4B4" stroke-opacity="0.3" stroke-width="1"/>
+  <text x="600" y="169" text-anchor="middle" fill="#00C4B4" font-family="system-ui,-apple-system,sans-serif" font-size="14" font-weight="600" letter-spacing="2">🧬 LICENSED RN</text>
+  
+  <!-- Main title -->
+  <text x="600" y="250" text-anchor="middle" fill="#FFFFFF" font-family="system-ui,-apple-system,sans-serif" font-size="64" font-weight="800" letter-spacing="-1">Nurse Rob, RN</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="310" text-anchor="middle" fill="#C9A84C" font-family="system-ui,-apple-system,sans-serif" font-size="24" font-weight="500">Licensed Peptide Educator &amp; Consultant</text>
+  
+  <!-- Divider -->
+  <line x1="400" y1="355" x2="800" y2="355" stroke="#00C4B4" stroke-opacity="0.3" stroke-width="1"/>
+  
+  <!-- Bottom text -->
+  <text x="600" y="410" text-anchor="middle" fill="#64748B" font-family="system-ui,-apple-system,sans-serif" font-size="18">No bro-science. No hype. Real clinical knowledge.</text>
+  
+  <!-- URL -->
+  <text x="600" y="530" text-anchor="middle" fill="#475569" font-family="system-ui,-apple-system,sans-serif" font-size="16">nurserobhealth.com</text>
+  
+  <!-- Bottom accent -->
+  <rect x="540" y="550" width="120" height="3" rx="1.5" fill="#00C4B4" fill-opacity="0.4"/>
+</svg>
