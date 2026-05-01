@@ -225,6 +225,23 @@ body.menu-open { overflow: hidden; }
 <!-- LEAD MAGNET -->
 <section id="resources" class="bg-cream">
   <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
+
+    <!-- POST-SUBMIT SUCCESS (always visible, outside section-reveal container) -->
+    <div id="post-submit-success" class="hidden mb-12 p-8 bg-white border-2 border-teal rounded-2xl text-center shadow-lg max-w-lg mx-auto">
+      <div class="text-green-600 text-xl font-bold mb-3">✅ Your stack is ready!</div>
+      <p class="text-navy-800 mb-4">Your personalized protocol has been calculated. Check your inbox.</p>
+      <div class="p-4 bg-off-white rounded-xl mb-4">
+        <p class="text-navy-800 text-sm font-semibold mb-3">📥 Download your full 7-page guide:</p>
+        <a href="/guide.pdf" target="_blank" class="inline-block bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-3 rounded-full text-sm transition">Download Wolverine Stack Guide →</a>
+        <p class="text-muted text-xs mt-2">Educational resource — not medical advice.</p>
+      </div>
+      <div class="border-t border-gray-200 pt-4">
+        <p class="text-navy-800 text-sm font-semibold mb-3">Want a licensed RN to review your full stack?</p>
+        <a href="https://cal.com/nurserob/peptide-consult" target="_blank" rel="noopener" class="inline-block bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-3 rounded-full text-sm transition">📅 Book a 1-on-1 Consult ($197) →</a>
+      </div>
+      <p class="text-muted text-xs mt-4">⚠️ Educational consulting. Not medical advice.</p>
+    </div>
+
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <div class="section-reveal">
         <div class="bg-white rounded-2xl shadow-lg p-6 max-w-sm mx-auto relative border border-navy-900/5">
@@ -269,21 +286,6 @@ body.menu-open { overflow: hidden; }
             <p class="text-navy-900 font-semibold text-sm mb-2">Your Personalized Protocol:</p>
             <div id="result-text" class="font-mono text-xs text-navy-800 space-y-1"></div>
             <p class="text-muted text-xs mt-3">⚠️ Educational tool only. Not medical advice.</p>
-          </div>
-
-          <!-- Success state: shown when returning from Formspree redirect -->
-          <div id="post-submit-success" class="hidden mt-5 p-5 bg-white border-2 border-teal/30 rounded-2xl text-center">
-            <div class="text-green-600 text-base font-semibold mb-2">✅ Your stack is ready!</div>
-            <p class="text-navy-800 text-xs mb-3">Your personalized protocol has been calculated and sent.</p>
-            <div class="p-3 bg-off-white rounded-xl mb-3">
-              <p class="text-navy-800 text-xs font-semibold mb-2">📥 Download your full 7-page guide:</p>
-              <a href="/guide.pdf" target="_blank" class="inline-block bg-teal hover:bg-teal-dark text-white font-semibold px-5 py-2.5 rounded-full text-sm transition">Download Wolverine Stack Guide →</a>
-              <p class="text-muted text-xs mt-2">Educational resource — not medical advice.</p>
-            </div>
-            <div class="border-t border-gray-200 pt-3">
-              <p class="text-navy-800 text-xs font-semibold mb-2">Want a licensed RN to review your full stack?</p>
-              <a href="https://cal.com/nurserob/peptide-consult" target="_blank" rel="noopener" class="inline-block bg-teal hover:bg-teal-dark text-white font-semibold px-5 py-2.5 rounded-full text-sm transition">📅 Book a 1-on-1 Consult ($197) →</a>
-            </div>
           </div>
         </div>
       </div>
@@ -606,8 +608,19 @@ body.menu-open { overflow: hidden; }
   if (window.location.search.includes('thanks=true')) {
     var successDiv = document.getElementById('post-submit-success');
     if (successDiv) {
+      // Show it immediately — no animation needed since it's outside section-reveal
       successDiv.classList.remove('hidden');
-      successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // Scroll to the resources section so they see the success message
+      setTimeout(function() {
+        var resourcesEl = document.getElementById('resources');
+        if (resourcesEl) {
+          resourcesEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        // Then fine-tune scroll to center the success div
+        setTimeout(function() {
+          successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 400);
+      }, 200);
       // Clean the URL without reloading
       var cleanUrl = window.location.pathname;
       window.history.replaceState({}, '', cleanUrl);
