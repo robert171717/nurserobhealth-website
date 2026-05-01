@@ -554,52 +554,20 @@ body.menu-open { overflow: hidden; }
       `;
       calcResult.classList.remove('hidden');
 
-      // Email capture handler — POSTs to Formspree
+      // Email capture handler — Native form submission (most reliable cross-platform)
       const emailForm = document.getElementById('email-capture-form');
       if (emailForm) {
-        emailForm.addEventListener('submit', async function(ev) {
-          ev.preventDefault();
-          const captureEmail = document.getElementById('capture-email').value;
-          const captureDiv = emailForm.closest('.email-capture');
-          const btn = emailForm.querySelector('button');
-          
-          // Show sending state
-          btn.textContent = 'Sending...';
-          btn.disabled = true;
-
-          try {
-            const res = await fetch('https://formspree.io/f/xnjwaowp', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                email: captureEmail,
-                message: `Wolverine Stack Calculator Result\n—\nBPC-157: ${bpc} · ${frequency}\nTB-500: ${tb} · 2x weekly\nAge: ${age} | Weight: ${weight}lbs | Goal: ${goal} | Experience: ${experience}\n—\nSent from nurserobhealth.com`
-              })
-            });
-
-            if (res.ok) {
-              captureDiv.innerHTML = `
-                <div class="text-green-600 text-sm font-semibold">✅ Your stack is ready!</div>
-                <p class="text-navy-800 text-xs mt-1">Personalized protocol calculated for <strong>${captureEmail}</strong>.</p>
-                <div class="mt-3 p-4 bg-white border border-teal/30 rounded-xl">
-                  <p class="text-navy-800 text-xs font-semibold mb-2">📥 Download your full 7-page guide:</p>
-                  <a href="/guide.pdf" target="_blank" class="inline-block bg-teal hover:bg-teal-dark text-white font-semibold px-5 py-2.5 rounded-full text-sm transition">Download Wolverine Stack Guide →</a>
-                  <p class="text-muted text-xs mt-2">📥 Educational resource — not medical advice.</p>
-                </div>
-                <div class="mt-3 pt-3 border-t border-gray-200">
-                  <p class="text-navy-800 text-xs font-semibold mb-2">Want a licensed RN to review your full stack?</p>
-                  <a href="https://cal.com/nurserob/peptide-consult" target="_blank" rel="noopener" class="inline-block bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-3 rounded-full text-sm transition hover:scale-105">📅 Book a 1-on-1 Consult ($197) →</a>
-                </div>
-              `;
-            } else {
-              throw new Error('Formspree rejected');
-            }
-          } catch (err) {
-            captureDiv.innerHTML = `
-              <div class="text-red-500 text-sm font-semibold">⚠️ Something went wrong.</div>
-              <p class="text-navy-800 text-xs mt-1">Please try again or email us directly at <a href="mailto:nurse@nurserobhealth.com" class="text-teal underline">nurse@nurserobhealth.com</a>.</p>
-            `;
-          }
+        // Let the browser submit natively via the action attribute
+        // Formspree will redirect to /thanks (configured in Formspree dashboard)
+        // No preventDefault — native form POST is more reliable than fetch on mobile
+        emailForm.addEventListener('submit', function() {
+          // Add a hidden field to identify this as a calculator lead
+          var hidden = document.createElement('input');
+          hidden.type = 'hidden';
+          hidden.name = '_subject';
+          hidden.value = 'New submission from Wolverine Stack Calculator Leads';
+          this.appendChild(hidden);
+          // Let the browser handle the rest
         });
       }
     });
