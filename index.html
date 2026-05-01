@@ -579,6 +579,8 @@ body.menu-open { overflow: hidden; }
         // Formspree will redirect to /thanks (configured in Formspree dashboard)
         // No preventDefault — native form POST is more reliable than fetch on mobile
         emailForm.addEventListener('submit', function() {
+          // Set flag so we detect the return from Formspree
+          sessionStorage.setItem('nurserob_thanks', 'true');
           // Add a hidden field to identify this as a calculator lead
           var hidden = document.createElement('input');
           hidden.type = 'hidden';
@@ -605,27 +607,36 @@ body.menu-open { overflow: hidden; }
 })();
 
   // ── Show success state when returning from Formspree ──
-  if (window.location.search.includes('thanks=true')) {
-    var successDiv = document.getElementById('post-submit-success');
-    if (successDiv) {
-      // Show it immediately — no animation needed since it's outside section-reveal
-      successDiv.classList.remove('hidden');
-      // Scroll to the resources section so they see the success message
-      setTimeout(function() {
-        var resourcesEl = document.getElementById('resources');
-        if (resourcesEl) {
-          resourcesEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-        // Then fine-tune scroll to center the success div
+  // Uses sessionStorage because Formspree free tier's "Go Back" uses
+  // browser history, NOT the _next redirect URL. sessionStorage survives
+  // the round-trip within the same tab.
+  function showPostSubmitSuccess() {
+    if (sessionStorage.getItem('nurserob_thanks') === 'true') {
+      sessionStorage.removeItem('nurserob_thanks'); // one-shot
+      var successDiv = document.getElementById('post-submit-success');
+      if (successDiv) {
+        successDiv.classList.remove('hidden');
+        // Scroll to it after a short delay for mobile page restore
         setTimeout(function() {
-          successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 400);
-      }, 200);
-      // Clean the URL without reloading
-      var cleanUrl = window.location.pathname;
-      window.history.replaceState({}, '', cleanUrl);
+          var resourcesEl = document.getElementById('resources');
+          if (resourcesEl) {
+            resourcesEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+          setTimeout(function() {
+            successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 400);
+        }, 300);
+      }
     }
   }
+
+  // Check on initial load
+  showPostSubmitSuccess();
+  // Also check on back-navigation (pageshow fires when returning via history)
+  window.addEventListener('pageshow', function(e) {
+    // e.persisted is true when page is restored from bfcache (back button)
+    if (e.persisted) showPostSubmitSuccess();
+  });
 
   // ── Mailto fallback for desktop browsers without email client ──
   document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
