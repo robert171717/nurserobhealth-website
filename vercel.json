@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/wolverine", "destination": "/wolverine.html" }
+  ]
+}
