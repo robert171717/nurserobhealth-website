@@ -6,31 +6,97 @@
 <title>Nurse Rob, RN — Licensed Peptide Educator & Consultant</title>
 <meta name="description" content="Nurse Rob, RN provides educational peptide consulting. Licensed registered nurse. No bro-science. Research-backed. 1-on-1 consultations and free resources.">
 <meta property="og:title" content="Nurse Rob, RN — Licensed Peptide Educator">
-<meta property="og:description" content="Licensed RN. Peptide education. No bro-science. Real clinical knowledge.">
-<meta property="og:image" content="https://nurserobhealth.com/og-card.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:url" content="https://nurserobhealth.com?v=3">
+<meta property="og:description" content="Your licensed clinical guide through the peptide landscape. Book a consultation or get the free Wolverine Stack Calculator.">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Nurse Rob Health">
-<meta property="og:locale" content="en_US">
-
+<meta property="og:url" content="https://nurserobhealth.com">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@NurseRobHealth">
-<meta name="twitter:creator" content="@NurseRobHealth">
 <meta name="twitter:title" content="Nurse Rob, RN — Licensed Peptide Educator">
 <meta name="twitter:description" content="Licensed RN. Peptide education. No bro-science. Real clinical knowledge.">
 <meta name="twitter:image" content="https://nurserobhealth.com/og-card.jpg">
-<meta name="twitter:image:width" content="1200">
-<meta name="twitter:image:height" content="630">
-
+<meta property="og:image" content="https://nurserobhealth.com/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <link rel="canonical" href="https://nurserobhealth.com">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%AC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
+
+<!-- ===== JSON-LD STRUCTURED DATA ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Nurse Rob Health",
+      "url": "https://nurserobhealth.com",
+      "description": "Licensed RN providing research-backed peptide education, 1-on-1 protocol reviews, and the free Wolverine Stack Calculator.",
+      "logo": "https://nurserobhealth.com/og-card.jpg",
+      "sameAs": ["https://x.com/NurseRobHealth"],
+      "founder": {
+        "@type": "Person",
+        "name": "Nurse Rob",
+        "honorificSuffix": "RN",
+        "jobTitle": "Licensed Peptide Educator & Consultant"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Consultation Booking",
+        "url": "https://cal.com/nurserob/peptide-consult",
+        "availableLanguage": "English"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "name": "Nurse Rob Health",
+      "url": "https://nurserobhealth.com",
+      "inLanguage": "en",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://nurserobhealth.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Person",
+      "name": "Nurse Rob",
+      "honorificSuffix": "RN",
+      "jobTitle": "Licensed Peptide Educator & Consultant",
+      "description": "Licensed registered nurse cutting through peptide bro-science with real clinical knowledge. Research-backed education on BPC-157, TB-500, peptide therapy, and the Wolverine Stack.",
+      "url": "https://nurserobhealth.com",
+      "sameAs": ["https://x.com/NurseRobHealth"],
+      "knowsAbout": [
+        "Peptide Therapy",
+        "BPC-157",
+        "TB-500",
+        "Thymosin Beta-4",
+        "Wolverine Stack",
+        "Peptide Dosing Protocols",
+        "Tissue Regeneration",
+        "Clinical Research Analysis",
+        "Injection Safety",
+        "GHK-Cu",
+        "Ipamorelin",
+        "CJC-1295",
+        "Anti-Aging Peptides",
+        "Bodybuilding Peptides",
+        "Semaglutide",
+        "Tirzepatide"
+      ],
+      "makesOffer": {
+        "@type": "Offer",
+        "name": "1-on-1 Peptide Protocol Review",
+        "price": "197.00",
+        "priceCurrency": "USD",
+        "url": "https://cal.com/nurserob/peptide-consult",
+        "description": "30-minute educational consultation with a licensed RN. Full stack safety review, dosing optimization, drug interaction screening. Not medical advice."
+      }
+    }
+  ]
+}
+</script>
 <script>
 tailwind.config = {
   theme: {
@@ -79,8 +145,9 @@ body.menu-open { overflow: hidden; }
     <div class="hidden md:flex items-center gap-6">
       <a href="#about" class="text-white/70 hover:text-white transition text-sm font-medium">About</a>
       <a href="#services" class="text-white/70 hover:text-white transition text-sm font-medium">Services</a>
-      <a href="#resources" class="text-white/70 hover:text-white transition text-sm font-medium">Resources</a>
-      <a href="https://cal.com/nurserob/peptide-consult" target="_blank" rel="noopener" class="bg-teal hover:bg-teal-dark text-white font-semibold px-5 py-2.5 rounded-full text-sm hover:scale-105 transition-all duration-200">Book a Consult →</a>
+      <a href="#faq" class="text-white/70 hover:text-white transition text-sm font-medium">FAQ</a>
+      <a href="#resources" class="text-white/70 hover:text-white transition text-sm font-medium">Wolverine Stack</a>
+      <a href="#services" class="bg-teal hover:bg-teal-dark text-white font-semibold px-5 py-2.5 rounded-full text-sm hover:scale-105 transition-all duration-200">Book a Consult →</a>
     </div>
     <button id="menu-btn" class="md:hidden flex items-center justify-center w-11 h-11 text-white" aria-label="Open menu" aria-expanded="false">
       <span class="flex flex-col gap-1.5"><span class="block w-6 h-0.5 bg-white rounded-full"></span><span class="block w-6 h-0.5 bg-white rounded-full"></span><span class="block w-6 h-0.5 bg-white rounded-full"></span></span>
@@ -110,19 +177,12 @@ body.menu-open { overflow: hidden; }
       🧬 Licensed RN · Peptide Educator
     </div>
 
-    <div class="section-reveal mb-6">
-      <a href="https://x.com/NurseRobHealth" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-teal/60 hover:text-teal text-xs font-medium transition-colors">
-        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        Follow on X: @NurseRobHealth
-      </a>
-    </div>
-
     <h1 class="section-reveal hero-title text-5xl sm:text-6xl md:text-8xl font-extrabold text-white tracking-tight leading-tight mb-6">
-      Nurse <span class="border-b-2 border-teal">Rob</span>, RN
+      Nurse <span class="border-b-2 border-teal">Rob</span>, RN — Peptide Therapy Expert
     </h1>
 
     <p class="section-reveal text-white/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-      Your licensed clinical guide through the peptide landscape. No bro-science. No hype. Just real knowledge from a nurse who reads the actual research.
+      Your licensed clinical guide through the peptide landscape — BPC-157, TB-500, the Wolverine Stack, and beyond. No bro-science. No hype. Just real knowledge from a nurse who reads the actual research.
     </p>
 
     <div class="section-reveal flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -176,8 +236,8 @@ body.menu-open { overflow: hidden; }
         <h2 class="text-4xl md:text-5xl font-bold text-navy-900 leading-tight mb-8">Why an RN is different from a "biohacking guru"</h2>
         <div class="space-y-5 text-body leading-relaxed text-base md:text-lg">
           <p>I'm Nurse Rob — a licensed registered nurse who got tired of watching people inject substances they didn't fully understand. The peptide space is full of influencers who've never set foot in a hospital, never read a clinical trial cover-to-cover, and never had a patient's safety on their conscience.</p>
-          <p>My training includes pharmacology, pathophysiology, and years of direct patient care. When I evaluate a peptide protocol, I'm looking at it through the same clinical lens I'd use for any treatment plan: What does the evidence actually show? What are the real risks? What are we still unsure about?</p>
-          <p>I'm not here to sell you peptides. I'm here to help you understand them — safely, honestly, and based on real science.</p>
+          <p>My areas of focus include BPC-157 for tissue repair, TB-500 (Thymosin Beta-4) for systemic healing, the Wolverine Stack protocol, and navigating the broader peptide therapy landscape — from anti-aging peptides like GHK-Cu and Ipamorelin to metabolic compounds like Semaglutide and Tirzepatide.</p>
+          <p>I'm not here to sell you peptides. I'm here to help you understand them — safely, honestly, and based on real science. My training includes pharmacology, pathophysiology, and years of direct patient care. When I evaluate a peptide protocol, I'm looking at it through the same clinical lens I'd use for any treatment plan: What does the evidence actually show? What are the real risks? What are we still unsure about?</p>
         </div>
         <p class="mt-8 italic text-navy-800 text-lg">— Nurse Rob, RN</p>
       </div>
@@ -217,7 +277,7 @@ body.menu-open { overflow: hidden; }
           <li class="flex items-start gap-2"><span class="text-teal mt-0.5">•</span> Personalized written summary</li>
         </ul>
         <div class="mt-auto">
-          <a href="https://cal.com/nurserob/peptide-consult" target="_blank" rel="noopener" class="inline-block bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 hover:scale-105">Book Your Session →</a>
+          <a href="mailto:nurse@nurserobhealth.com?subject=Book%20Peptide%20Protocol%20Review" class="inline-block bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 hover:scale-105">Book Your Session →</a>
           <p class="text-muted text-xs mt-4 leading-relaxed">⚠️ Educational consulting. Not medical advice. No provider-patient relationship.</p>
         </div>
       </div>
@@ -246,23 +306,6 @@ body.menu-open { overflow: hidden; }
 <!-- LEAD MAGNET -->
 <section id="resources" class="bg-cream">
   <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 md:py-28">
-
-    <!-- POST-SUBMIT SUCCESS (always visible, outside section-reveal container) -->
-    <div id="post-submit-success" class="hidden mb-12 p-8 bg-white border-2 border-teal rounded-2xl text-center shadow-lg max-w-lg mx-auto">
-      <div class="text-green-600 text-xl font-bold mb-3">✅ Your stack is ready!</div>
-      <p class="text-navy-800 mb-4">Your personalized protocol has been calculated. Check your inbox.</p>
-      <div class="p-4 bg-off-white rounded-xl mb-4">
-        <p class="text-navy-800 text-sm font-semibold mb-3">📥 Download your full 12-page guide:</p>
-        <a href="/guide.pdf" target="_blank" class="inline-block bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-3 rounded-full text-sm transition">Download Wolverine Stack Guide →</a>
-        <p class="text-muted text-xs mt-2">Educational resource — not medical advice.</p>
-      </div>
-      <div class="border-t border-gray-200 pt-4">
-        <p class="text-navy-800 text-sm font-semibold mb-3">Want a licensed RN to review your full stack?</p>
-        <a href="https://cal.com/nurserob/peptide-consult" target="_blank" rel="noopener" class="inline-block bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-3 rounded-full text-sm transition">📅 Book a 1-on-1 Consult ($197) →</a>
-      </div>
-      <p class="text-muted text-xs mt-4">⚠️ Educational consulting. Not medical advice.</p>
-    </div>
-
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <div class="section-reveal">
         <div class="bg-white rounded-2xl shadow-lg p-6 max-w-sm mx-auto relative border border-navy-900/5">
@@ -360,6 +403,35 @@ body.menu-open { overflow: hidden; }
   </div>
 </section>
 
+<!-- FAQ SECTION -->
+<section id="faq" class="bg-offwhite">
+  <div class="max-w-4xl mx-auto px-6 md:px-12 py-20 md:py-28">
+    <div class="section-reveal text-center mb-16">
+      <p class="text-teal text-sm font-semibold uppercase tracking-wider mb-3">FAQ</p>
+      <h2 class="text-4xl md:text-5xl font-bold text-navy-900 leading-tight mb-4">Common Peptide Questions</h2>
+      <p class="text-muted">Honest answers from a licensed RN.</p>
+    </div>
+    <div class="space-y-6">
+      <div class="section-reveal bg-white rounded-2xl p-6 md:p-8 border border-gray-100">
+        <h3 class="text-navy-900 font-bold text-lg mb-3">What is the Wolverine Stack?</h3>
+        <p class="text-body leading-relaxed">The Wolverine Stack combines BPC-157 and TB-500 — two research-backed peptides studied for tissue repair and recovery. BPC-157 targets localized healing in the GI tract and soft tissue, while TB-500 works systemically to promote cell migration and angiogenesis. There is zero human safety data on stacking them together — this is theoretical synergy from animal models. Always consult your physician before considering any peptide protocol.</p>
+      </div>
+      <div class="section-reveal bg-white rounded-2xl p-6 md:p-8 border border-gray-100">
+        <h3 class="text-navy-900 font-bold text-lg mb-3">What's the difference between peptide education and medical advice?</h3>
+        <p class="text-body leading-relaxed">As a licensed RN, I provide educational consulting — I explain what the research shows, walk through dosing protocols from published studies, and help you understand potential risks. I do not prescribe, diagnose, or treat. No provider-patient relationship is formed. Think of it as having a clinically-trained guide who reads the studies so you don't have to.</p>
+      </div>
+      <div class="section-reveal bg-white rounded-2xl p-6 md:p-8 border border-gray-100">
+        <h3 class="text-navy-900 font-bold text-lg mb-3">Which peptides are best for anti-aging?</h3>
+        <p class="text-body leading-relaxed">GHK-Cu has the strongest evidence for skin regeneration and collagen synthesis. Ipamorelin and CJC-1295 are growth hormone secretagogues studied for body composition. Semaglutide and Tirzepatide are GLP-1 agonists with significant metabolic and longevity data. Each has distinct mechanisms, risks, and evidence quality. This is exactly what I cover in a 1-on-1 protocol review — matching compounds to your specific goals and health profile.</p>
+      </div>
+      <div class="section-reveal bg-white rounded-2xl p-6 md:p-8 border border-gray-100">
+        <h3 class="text-navy-900 font-bold text-lg mb-3">How do I know my peptide source is legitimate?</h3>
+        <p class="text-body leading-relaxed">This is the most important question in the peptide space. Look for third-party COAs (Certificates of Analysis) from labs like Janoshik or MZ Biolabs. Verify the batch number matches. Check for endotoxin testing, not just purity. Avoid any source that won't share test results. In a consultation, I can help you evaluate what you're considering — but I do not endorse or recommend specific vendors.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <!-- FOOTER -->
@@ -372,7 +444,7 @@ body.menu-open { overflow: hidden; }
         <div class="flex gap-4 mt-4 text-white/50 text-xl">
           <a href="#" aria-label="LinkedIn" class="hover:text-teal transition">in</a>
           <a href="mailto:nurse@nurserobhealth.com" aria-label="Email" class="hover:text-teal transition">✉</a>
-          <a href="https://x.com/NurseRobHealth" aria-label="X (Twitter)" class="hover:text-teal transition">𝕏</a>
+          <a href="https://x.com/RealSolanaMeme" aria-label="X (Twitter)" class="hover:text-teal transition">𝕏</a>
         </div>
       </div>
       <div>
@@ -583,9 +655,8 @@ body.menu-open { overflow: hidden; }
         <div class="text-xs text-muted mt-2">Based on age ${age}, weight ${weight}lbs, goal: ${goal}</div>
         <div class="mt-4 pt-4 border-t border-gray-200 email-capture">
           <p class="text-navy-800 text-xs font-semibold mb-2">📧 Get the full 12-page PDF guide + your protocol</p>
-          <form id="email-capture-form" class="flex gap-2" action="https://formspree.io/f/xnjwaowp" method="POST">
-            <input type="hidden" name="_next" value="https://nurserobhealth.com/?thanks=true">
-            <input type="email" id="capture-email" name="email" placeholder="your@email.com" required class="flex-1 bg-white border border-gray-200 rounded-full px-3 py-2 text-xs outline-none focus:border-teal">
+          <form id="email-capture-form" class="flex gap-2">
+            <input type="email" id="capture-email" placeholder="your@email.com" required class="flex-1 bg-white border border-gray-200 rounded-full px-3 py-2 text-xs outline-none focus:border-teal">
             <button type="submit" class="bg-teal hover:bg-teal-dark text-white font-semibold px-4 py-2 rounded-full text-xs whitespace-nowrap transition">Send My Guide →</button>
           </form>
           <p class="text-muted text-xs mt-2 email-disclaimer">📧 Your email is private. Educational resource — not medical advice.</p>
@@ -593,22 +664,44 @@ body.menu-open { overflow: hidden; }
       `;
       calcResult.classList.remove('hidden');
 
-      // Email capture handler — Native form submission (most reliable cross-platform)
+      // Email capture handler — POSTs to Formspree
       const emailForm = document.getElementById('email-capture-form');
       if (emailForm) {
-        // Let the browser submit natively via the action attribute
-        // Formspree will redirect to /thanks (configured in Formspree dashboard)
-        // No preventDefault — native form POST is more reliable than fetch on mobile
-        emailForm.addEventListener('submit', function() {
-          // Set flag so we detect the return from Formspree
-          sessionStorage.setItem('nurserob_thanks', 'true');
-          // Add a hidden field to identify this as a calculator lead
-          var hidden = document.createElement('input');
-          hidden.type = 'hidden';
-          hidden.name = '_subject';
-          hidden.value = 'New submission from Wolverine Stack Calculator Leads';
-          this.appendChild(hidden);
-          // Let the browser handle the rest
+        emailForm.addEventListener('submit', async function(ev) {
+          ev.preventDefault();
+          const captureEmail = document.getElementById('capture-email').value;
+          const captureDiv = emailForm.closest('.email-capture');
+          const btn = emailForm.querySelector('button');
+          
+          // Show sending state
+          btn.textContent = 'Sending...';
+          btn.disabled = true;
+
+          try {
+            const res = await fetch('https://formspree.io/f/xnjwaowp', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                email: captureEmail,
+                message: `Wolverine Stack Calculator Result\n—\nBPC-157: ${bpc} · ${frequency}\nTB-500: ${tb} · 2x weekly\nAge: ${age} | Weight: ${weight}lbs | Goal: ${goal} | Experience: ${experience}\n—\nSent from nurserobhealth.com`
+              })
+            });
+
+            if (res.ok) {
+              captureDiv.innerHTML = `
+                <div class="text-green-600 text-sm font-semibold">✅ Check your inbox!</div>
+                <p class="text-navy-800 text-xs mt-1">Your Wolverine Stack Calculator + 12-page PDF guide is on its way to <strong>${captureEmail}</strong>.</p>
+                <p class="text-muted text-xs mt-2">📧 Your email is private. Educational resource — not medical advice.</p>
+              `;
+            } else {
+              throw new Error('Formspree rejected');
+            }
+          } catch (err) {
+            captureDiv.innerHTML = `
+              <div class="text-red-500 text-sm font-semibold">⚠️ Something went wrong.</div>
+              <p class="text-navy-800 text-xs mt-1">Please try again or email us directly at <a href="mailto:nurse@nurserobhealth.com" class="text-teal underline">nurse@nurserobhealth.com</a>.</p>
+            `;
+          }
         });
       }
     });
@@ -626,58 +719,6 @@ body.menu-open { overflow: hidden; }
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
 })();
-
-  // ── Show success state when returning from Formspree ──
-  // Uses sessionStorage because Formspree free tier's "Go Back" uses
-  // browser history, NOT the _next redirect URL. sessionStorage survives
-  // the round-trip within the same tab.
-  function showPostSubmitSuccess() {
-    if (sessionStorage.getItem('nurserob_thanks') === 'true') {
-      sessionStorage.removeItem('nurserob_thanks'); // one-shot
-      var successDiv = document.getElementById('post-submit-success');
-      if (successDiv) {
-        successDiv.classList.remove('hidden');
-        // Scroll to it after a short delay for mobile page restore
-        setTimeout(function() {
-          var resourcesEl = document.getElementById('resources');
-          if (resourcesEl) {
-            resourcesEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-          setTimeout(function() {
-            successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }, 400);
-        }, 300);
-      }
-    }
-  }
-
-  // Check on initial load
-  showPostSubmitSuccess();
-  // Also check on back-navigation (pageshow fires when returning via history)
-  window.addEventListener('pageshow', function(e) {
-    // e.persisted is true when page is restored from bfcache (back button)
-    if (e.persisted) showPostSubmitSuccess();
-  });
-
-  // ── Mailto fallback for desktop browsers without email client ──
-  document.querySelectorAll('a[href^="mailto:"]').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      var email = link.getAttribute('href').replace('mailto:', '').split('?')[0];
-      // Try mailto first (works if email client configured)
-      // If it fails after 1.5s, copy to clipboard
-      var fallbackTimer = setTimeout(function() {
-        navigator.clipboard.writeText(email).then(function() {
-          var toast = document.createElement('div');
-          toast.textContent = 'Copied: ' + email;
-          toast.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#0A1F3F;color:#fff;padding:12px 24px;border-radius:999px;font-size:14px;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,0.3);animation:fadeIn 0.3s ease';
-          document.body.appendChild(toast);
-          setTimeout(function() { toast.style.opacity='0'; toast.style.transition='opacity 0.3s'; setTimeout(function() { toast.remove(); }, 300); }, 2000);
-        }).catch(function() {});
-      }, 1500);
-      // If mailto fires, cancel the fallback
-      window.addEventListener('focus', function() { clearTimeout(fallbackTimer); }, {once: true});
-    });
-  });
 </script>
 
 </body>
