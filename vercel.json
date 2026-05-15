@@ -1,6 +1,8 @@
 {
   "rewrites": [
     { "source": "/wolverine", "destination": "/wolverine.html" },
-    { "source": "/wolverine-stack", "destination": "/wolverine-stack.html" }
+    { "source": "/wolverine-stack", "destination": "/wolverine-stack.html" },
+    { "source": "/bpc-157-guide", "destination": "/bpc-157-guide.html" },
+    { "source": "/tb-500-guide", "destination": "/tb-500-guide.html" }
   ]
 }
