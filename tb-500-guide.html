@@ -433,6 +433,29 @@ body { margin: 0; overflow-x: hidden; background: #FFFFFF; color: var(--body); f
     </div>
   </section>
 
+  <!-- Email Capture -->
+  <section class="mb-16">
+    <div class="max-w-2xl mx-auto">
+      <div id="guide-post-submit-success" class="hidden mb-8 p-6 bg-teal/10 border-2 border-teal rounded-2xl text-center">
+        <div class="text-green-600 text-lg font-bold mb-2">✅ Check your inbox!</div>
+        <p class="text-body mb-3">Your Wolverine Stack Calculator + 12-page PDF guide is on its way.</p>
+        <a href="/guide.pdf" class="inline-block bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-3 rounded-full text-sm transition">📥 Download PDF Guide →</a>
+      </div>
+
+      <div id="guide-email-form-wrap" class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 text-center">
+        <h3 class="text-2xl font-bold text-navy-900 mb-2">📧 Get Your Free Wolverine Stack Calculator</h3>
+        <p class="text-body mb-6">Enter your email for a personalized BPC-157 + TB-500 protocol based on your weight, goals, and experience. Includes the 12-page PDF guide.</p>
+        <form id="guide-email-form" action="https://formspree.io/f/xnjwaowp" method="POST" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <input type="hidden" name="_next" value="https://nurserobhealth.com/tb-500-guide?thanks=true">
+          <input type="hidden" name="source" value="tb-500-guide">
+          <input type="email" name="email" placeholder="your@email.com" required class="flex-1 bg-offwhite border border-gray-200 rounded-full px-4 py-3 text-sm outline-none focus:border-teal">
+          <button type="submit" class="bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-3 rounded-full text-sm whitespace-nowrap transition">Send My Guide →</button>
+        </form>
+        <p class="text-muted text-xs mt-3">📧 Your email is private. Educational resource — not medical advice.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="mb-16">
     <div class="bg-navy-900 rounded-3xl p-8 md:p-12 text-center">
@@ -463,6 +486,38 @@ body { margin: 0; overflow-x: hidden; background: #FFFFFF; color: var(--body); f
     <p class="text-white/20 text-xs text-center mt-8">⚠️ Nurse Rob, RN provides education, not medical advice. Always consult a licensed physician before starting any peptide protocol.</p>
   </div>
 </footer>
+
+<script>
+// Email capture — native POST + sessionStorage return detection
+(function() {
+  var form = document.getElementById('guide-email-form');
+  if (form) {
+    form.addEventListener('submit', function() {
+      sessionStorage.setItem('nurserob_guide_thanks', 'true');
+    });
+  }
+
+  var successDiv = document.getElementById('guide-post-submit-success');
+  var formWrap = document.getElementById('guide-email-form-wrap');
+  if (!successDiv || !formWrap) return;
+
+  function showThanks() {
+    if (sessionStorage.getItem('nurserob_guide_thanks') === 'true') {
+      sessionStorage.removeItem('nurserob_guide_thanks');
+      formWrap.classList.add('hidden');
+      successDiv.classList.remove('hidden');
+      setTimeout(function() {
+        successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 300);
+    }
+  }
+
+  showThanks();
+  window.addEventListener('pageshow', function(e) {
+    if (e.persisted) showThanks();
+  });
+})();
+</script>
 
 </body>
 </html>

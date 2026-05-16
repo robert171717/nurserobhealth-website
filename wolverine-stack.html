@@ -166,7 +166,7 @@ body { margin: 0; overflow-x: hidden; background: #FFFFFF; color: var(--body); f
       </p>
       <div class="flex flex-wrap gap-4">
         <a href="/#resources" class="bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-3 rounded-full transition-all duration-200 hover:scale-105">Try the Calculator →</a>
-        <a href="/guide.pdf" class="border-2 border-white/30 hover:border-white text-white font-semibold px-6 py-3 rounded-full transition-all duration-200">Download PDF Guide →</a>
+        <a href="/#resources" class="border-2 border-white/30 hover:border-white text-white font-semibold px-6 py-3 rounded-full transition-all duration-200">Get Free Guide →</a>
       </div>
     </div>
   </div>
@@ -273,13 +273,36 @@ body { margin: 0; overflow-x: hidden; background: #FFFFFF; color: var(--body); f
     </div>
   </section>
 
+  <!-- Email Capture -->
+  <section class="mb-16">
+    <div class="max-w-2xl mx-auto">
+      <div id="guide-post-submit-success" class="hidden mb-8 p-6 bg-teal/10 border-2 border-teal rounded-2xl text-center">
+        <div class="text-green-600 text-lg font-bold mb-2">✅ Check your inbox!</div>
+        <p class="text-body mb-3">Your Wolverine Stack Calculator + 12-page PDF guide is on its way.</p>
+        <a href="/guide.pdf" class="inline-block bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-3 rounded-full text-sm transition">📥 Download PDF Guide →</a>
+      </div>
+
+      <div id="guide-email-form-wrap" class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 text-center">
+        <h3 class="text-2xl font-bold text-navy-900 mb-2">📧 Get Your Free Wolverine Stack Calculator</h3>
+        <p class="text-body mb-6">Enter your email for a personalized BPC-157 + TB-500 protocol based on your weight, goals, and experience. Includes the 12-page PDF guide.</p>
+        <form id="guide-email-form" action="https://formspree.io/f/xnjwaowp" method="POST" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <input type="hidden" name="_next" value="https://nurserobhealth.com/wolverine-stack?thanks=true">
+          <input type="hidden" name="source" value="wolverine-stack">
+          <input type="email" name="email" placeholder="your@email.com" required class="flex-1 bg-offwhite border border-gray-200 rounded-full px-4 py-3 text-sm outline-none focus:border-teal">
+          <button type="submit" class="bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-3 rounded-full text-sm whitespace-nowrap transition">Send My Guide →</button>
+        </form>
+        <p class="text-muted text-xs mt-3">📧 Your email is private. Educational resource — not medical advice.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="bg-navy-800 rounded-2xl p-8 md:p-12 text-center border border-gold/20">
     <h2 class="text-3xl font-bold text-white mb-4">Want a Personalized Protocol?</h2>
     <p class="text-white/70 mb-8 max-w-lg mx-auto">Get your Wolverine Stack protocol reviewed by a licensed RN. 30-minute consultation. Not medical advice — educational consulting only.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a href="https://cal.com/nurserob/peptide-consult" target="_blank" rel="noopener" class="bg-teal hover:bg-teal-dark text-white font-semibold px-8 py-4 rounded-full transition hover:scale-105">Book a Consult ($197) →</a>
-      <a href="/guide.pdf" class="border-2 border-white/30 hover:border-white text-white font-semibold px-8 py-4 rounded-full transition">📥 Download Free Guide →</a>
+      <a href="/#resources" class="border-2 border-white/30 hover:border-white text-white font-semibold px-8 py-4 rounded-full transition">📥 Get Free Guide →</a>
     </div>
   </section>
 
@@ -296,6 +319,38 @@ body { margin: 0; overflow-x: hidden; background: #FFFFFF; color: var(--body); f
     </div>
   </div>
 </footer>
+
+<script>
+// Email capture — native POST + sessionStorage return detection
+(function() {
+  var form = document.getElementById('guide-email-form');
+  if (form) {
+    form.addEventListener('submit', function() {
+      sessionStorage.setItem('nurserob_guide_thanks', 'true');
+    });
+  }
+
+  var successDiv = document.getElementById('guide-post-submit-success');
+  var formWrap = document.getElementById('guide-email-form-wrap');
+  if (!successDiv || !formWrap) return;
+
+  function showThanks() {
+    if (sessionStorage.getItem('nurserob_guide_thanks') === 'true') {
+      sessionStorage.removeItem('nurserob_guide_thanks');
+      formWrap.classList.add('hidden');
+      successDiv.classList.remove('hidden');
+      setTimeout(function() {
+        successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 300);
+    }
+  }
+
+  showThanks();
+  window.addEventListener('pageshow', function(e) {
+    if (e.persisted) showThanks();
+  });
+})();
+</script>
 
 </body>
 </html>

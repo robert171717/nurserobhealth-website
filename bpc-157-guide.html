@@ -337,7 +337,30 @@ body { margin: 0; overflow-x: hidden; background: #FFFFFF; color: var(--body); f
         </ul>
       </div>
 
-      <p class="text-sm text-muted mt-4">For a complete step-by-step guide including mixing math, download the <a href="/guide.pdf" class="text-teal underline font-medium">free 12-page Wolverine Stack Guide (PDF)</a> or <a href="https://cal.com/nurserob/peptide-consult" target="_blank" rel="noopener" class="text-teal underline font-medium">book a 1-on-1 consult</a> for personalized injection training.</p>
+      <p class="text-sm text-muted mt-4">For a complete step-by-step guide including mixing math, <a href="/#resources" class="text-teal underline font-medium">get the free Wolverine Stack Calculator</a> (includes the 12-page PDF guide) or <a href="https://cal.com/nurserob/peptide-consult" target="_blank" rel="noopener" class="text-teal underline font-medium">book a 1-on-1 consult</a> for personalized injection training.</p>
+    </div>
+  </section>
+
+  <!-- Email Capture -->
+  <section class="mb-16">
+    <div class="max-w-2xl mx-auto">
+      <div id="guide-post-submit-success" class="hidden mb-8 p-6 bg-teal/10 border-2 border-teal rounded-2xl text-center">
+        <div class="text-green-600 text-lg font-bold mb-2">✅ Check your inbox!</div>
+        <p class="text-body mb-3">Your Wolverine Stack Calculator + 12-page PDF guide is on its way.</p>
+        <a href="/guide.pdf" class="inline-block bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-3 rounded-full text-sm transition">📥 Download PDF Guide →</a>
+      </div>
+
+      <div id="guide-email-form-wrap" class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 text-center">
+        <h3 class="text-2xl font-bold text-navy-900 mb-2">📧 Get Your Free Wolverine Stack Calculator</h3>
+        <p class="text-body mb-6">Enter your email for a personalized BPC-157 + TB-500 protocol based on your weight, goals, and experience. Includes the 12-page PDF guide.</p>
+        <form id="guide-email-form" action="https://formspree.io/f/xnjwaowp" method="POST" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <input type="hidden" name="_next" value="https://nurserobhealth.com/bpc-157-guide?thanks=true">
+          <input type="hidden" name="source" value="bpc-157-guide">
+          <input type="email" name="email" placeholder="your@email.com" required class="flex-1 bg-offwhite border border-gray-200 rounded-full px-4 py-3 text-sm outline-none focus:border-teal">
+          <button type="submit" class="bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-3 rounded-full text-sm whitespace-nowrap transition">Send My Guide →</button>
+        </form>
+        <p class="text-muted text-xs mt-3">📧 Your email is private. Educational resource — not medical advice.</p>
+      </div>
     </div>
   </section>
 
@@ -370,6 +393,38 @@ body { margin: 0; overflow-x: hidden; background: #FFFFFF; color: var(--body); f
     <p class="text-white/20 text-xs text-center mt-8">⚠️ Nurse Rob, RN provides education, not medical advice. Always consult a licensed physician before starting any peptide protocol.</p>
   </div>
 </footer>
+
+<script>
+// Email capture — native POST + sessionStorage return detection
+(function() {
+  var form = document.getElementById('guide-email-form');
+  if (form) {
+    form.addEventListener('submit', function() {
+      sessionStorage.setItem('nurserob_guide_thanks', 'true');
+    });
+  }
+
+  var successDiv = document.getElementById('guide-post-submit-success');
+  var formWrap = document.getElementById('guide-email-form-wrap');
+  if (!successDiv || !formWrap) return;
+
+  function showThanks() {
+    if (sessionStorage.getItem('nurserob_guide_thanks') === 'true') {
+      sessionStorage.removeItem('nurserob_guide_thanks');
+      formWrap.classList.add('hidden');
+      successDiv.classList.remove('hidden');
+      setTimeout(function() {
+        successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 300);
+    }
+  }
+
+  showThanks();
+  window.addEventListener('pageshow', function(e) {
+    if (e.persisted) showThanks();
+  });
+})();
+</script>
 
 </body>
 </html>
