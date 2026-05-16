@@ -770,6 +770,86 @@ body.menu-open { overflow: hidden; }
     });
   })();
 
+  // Exit-intent popup — desktop only, 50% scroll depth, once per session
+  (function() {
+    var overlay = document.getElementById('exit-popup-overlay');
+    var card = document.getElementById('exit-popup-card');
+    var form = document.getElementById('exit-popup-form');
+    var closeBtn = document.getElementById('exit-popup-close');
+    var successEl = document.getElementById('exit-popup-success');
+    if (!overlay || !card || !form) return;
+
+    var shown = false;
+    var scrolledEnough = false;
+
+    // Track scroll depth
+    window.addEventListener('scroll', function() {
+      if (scrolledEnough) return;
+      var pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      if (pct > 0.5) scrolledEnough = true;
+    }, { passive: true });
+
+    // Desktop exit intent
+    document.addEventListener('mouseleave', function(e) {
+      if (shown) return;
+      if (sessionStorage.getItem('exit_popup_shown')) return;
+      if (!scrolledEnough) return;
+      // Only trigger when mouse leaves toward the top (toward tab bar / close button)
+      if (e.clientY > 80) return;
+
+      shown = true;
+      sessionStorage.setItem('exit_popup_shown', '1');
+      overlay.classList.remove('hidden');
+      // Animate in
+      requestAnimationFrame(function() {
+        card.style.transform = 'translateY(0)';
+        card.style.opacity = '1';
+      });
+    });
+
+    function closePopup() {
+      card.style.transform = 'translateY(24px)';
+      card.style.opacity = '0';
+      setTimeout(function() {
+        overlay.classList.add('hidden');
+      }, 400);
+    }
+
+    closeBtn.addEventListener('click', closePopup);
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closePopup();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !overlay.classList.contains('hidden')) closePopup();
+    });
+
+    // Form submission
+    if (form) {
+      form.addEventListener('submit', function() {
+        sessionStorage.setItem('exit_popup_submitted', 'true');
+      });
+    }
+
+    // Show success on return
+    function showSuccess() {
+      if (sessionStorage.getItem('exit_popup_submitted') === 'true') {
+        sessionStorage.removeItem('exit_popup_submitted');
+        if (form) form.classList.add('hidden');
+        if (successEl) successEl.classList.remove('hidden');
+        // Show overlay if hidden
+        if (overlay.classList.contains('hidden')) {
+          overlay.classList.remove('hidden');
+          card.style.transform = 'translateY(0)';
+          card.style.opacity = '1';
+        }
+      }
+    }
+    showSuccess();
+    window.addEventListener('pageshow', function(e) {
+      if (e.persisted) showSuccess();
+    });
+  })();
+
   // Scroll reveals
   const reveals = document.querySelectorAll('.section-reveal');
   const observer = new IntersectionObserver((entries) => {
@@ -783,6 +863,30 @@ body.menu-open { overflow: hidden; }
   reveals.forEach(el => observer.observe(el));
 })();
 </script>
+
+<!-- Exit Intent Popup -->
+<div id="exit-popup-overlay" class="fixed inset-0 z-[100] flex items-center justify-center p-6 hidden" style="background: rgba(8,14,26,0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+  <div id="exit-popup-card" class="bg-navy-900 rounded-2xl p-8 md:p-10 max-w-md w-full text-center border border-teal/10 shadow-2xl relative" style="transform: translateY(24px); opacity: 0; transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);">
+    <button id="exit-popup-close" class="absolute top-4 right-4 text-white/20 hover:text-white/60 text-2xl leading-none transition-colors duration-200" aria-label="Close">&times;</button>
+    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-teal/10 mb-5">
+      <span class="text-3xl">🧬</span>
+    </div>
+    <h3 class="text-white text-2xl font-bold mb-3 tracking-tight">Before You Go</h3>
+    <p class="text-white/60 text-sm mb-1">Get the <span class="text-gold font-semibold">free Wolverine Stack Calculator</span></p>
+    <p class="text-white/35 text-xs mb-6 leading-relaxed">Personalized BPC-157 + TB-500 protocol based on <em>your</em> weight, goals, and experience. Includes the 12-page PDF guide. Built by a licensed RN — not a Reddit thread.</p>
+    <form id="exit-popup-form" action="https://formspree.io/f/xnjwaowp" method="POST" class="flex flex-col gap-3">
+      <input type="hidden" name="_next" value="https://nurserobhealth.com/?thanks=true&source=exit-popup">
+      <input type="hidden" name="source" value="exit-intent-homepage">
+      <input type="email" name="email" placeholder="your@email.com" required class="bg-navy-800 border border-white/10 rounded-full px-5 py-3 text-sm text-white placeholder-white/25 outline-none focus:border-teal text-center transition-colors">
+      <button type="submit" class="bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-3 rounded-full text-sm transition-all duration-200 hover:scale-105 hover:shadow-[0_0_30px_rgba(0,196,180,0.2)]">Send My Free Guide →</button>
+    </form>
+    <div id="exit-popup-success" class="hidden mt-5">
+      <p class="text-teal font-semibold text-sm">✅ Check your inbox</p>
+      <p class="text-white/35 text-xs mt-1">Your Wolverine Stack Calculator + PDF guide is on its way.</p>
+    </div>
+    <p class="text-white/15 text-xs mt-4">No spam. Educational resource — not medical advice.</p>
+  </div>
+</div>
 
 </body>
 </html>
