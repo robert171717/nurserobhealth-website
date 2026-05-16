@@ -472,6 +472,24 @@ body.menu-open { overflow: hidden; }
       </div>
     </div>
 
+    <!-- Newsletter Signup -->
+    <div class="border-t border-white/5 pt-10 pb-6">
+      <div id="newsletter-success" class="hidden text-center mb-6">
+        <p class="text-teal font-semibold">✅ You're in! Check your inbox for peptide research updates.</p>
+      </div>
+      <div id="newsletter-form-wrap" class="max-w-md mx-auto text-center">
+        <h4 class="text-white font-semibold mb-2">🧬 Stay Updated on Peptide Research</h4>
+        <p class="text-white/50 text-sm mb-4">No spam. Just clinical insights from a licensed RN. Unsubscribe anytime.</p>
+        <form id="newsletter-form" action="https://formspree.io/f/xnjwaowp" method="POST" class="flex flex-col sm:flex-row gap-3">
+          <input type="hidden" name="_next" value="https://nurserobhealth.com/?thanks=true&source=newsletter">
+          <input type="hidden" name="source" value="newsletter-footer">
+          <input type="email" name="email" placeholder="your@email.com" required class="flex-1 bg-navy-800 border border-white/10 rounded-full px-4 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-teal">
+          <button type="submit" class="bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-2.5 rounded-full text-sm whitespace-nowrap transition">Subscribe →</button>
+        </form>
+        <p class="text-muted text-xs mt-3">📧 Your email is private. Never shared.</p>
+      </div>
+    </div>
+
     <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between text-muted text-xs gap-2">
       <p>© 2026 Nurse Rob, RN. All rights reserved.</p>
       <p>Built with clinical precision. Not medical advice.</p>
@@ -697,6 +715,33 @@ body.menu-open { overflow: hidden; }
       }
     });
   }
+
+  // Newsletter form — native POST + sessionStorage return detection
+  (function() {
+    var form = document.getElementById('newsletter-form');
+    if (form) {
+      form.addEventListener('submit', function() {
+        sessionStorage.setItem('nurserob_newsletter_thanks', 'true');
+      });
+    }
+
+    var successDiv = document.getElementById('newsletter-success');
+    var formWrap = document.getElementById('newsletter-form-wrap');
+    if (!successDiv || !formWrap) return;
+
+    function showThanks() {
+      if (sessionStorage.getItem('nurserob_newsletter_thanks') === 'true') {
+        sessionStorage.removeItem('nurserob_newsletter_thanks');
+        formWrap.classList.add('hidden');
+        successDiv.classList.remove('hidden');
+      }
+    }
+
+    showThanks();
+    window.addEventListener('pageshow', function(e) {
+      if (e.persisted) showThanks();
+    });
+  })();
 
   // Post-submit success detection (Formspree return)
   (function() {

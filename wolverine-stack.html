@@ -251,6 +251,20 @@ body { margin: 0; overflow-x: hidden; background: #FFFFFF; color: var(--body); f
     </div>
   </section>
 
+  <!-- Content Upgrade: Printable PDF -->
+  <div class="bg-teal/5 border-2 border-teal/20 rounded-2xl p-6 mb-16 text-center max-w-2xl mx-auto">
+    <p class="text-navy-900 font-bold text-lg mb-2">📄 Want this guide as a printable PDF?</p>
+    <p class="text-body text-sm mb-4">Get the complete Wolverine Stack guide + personalized Calculator delivered to your inbox. Free, instant download.</p>
+    <form id="content-upgrade-form" action="https://formspree.io/f/xnjwaowp" method="POST" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+      <input type="hidden" name="_next" value="https://nurserobhealth.com/wolverine-stack?thanks=true&source=content-upgrade">
+      <input type="hidden" name="source" value="content-upgrade-wolverine">
+      <input type="email" name="email" placeholder="your@email.com" required class="flex-1 bg-white border border-gray-200 rounded-full px-4 py-2.5 text-sm outline-none focus:border-teal">
+      <button type="submit" class="bg-teal hover:bg-teal-dark text-white font-semibold px-5 py-2.5 rounded-full text-sm whitespace-nowrap transition">Download PDF →</button>
+    </form>
+    <div id="content-upgrade-success" class="hidden mt-4 text-green-600 text-sm font-semibold">✅ Check your inbox! Your PDF guide is on its way.</div>
+    <p class="text-muted text-xs mt-2">📧 Your email is private. Educational resource — not medical advice.</p>
+  </div>
+
   <!-- Safety -->
   <section class="mb-16">
     <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-6">Safety Considerations</h2>
@@ -310,7 +324,27 @@ body { margin: 0; overflow-x: hidden; background: #FFFFFF; color: var(--body); f
 
 <!-- FOOTER -->
 <footer class="bg-navy-900 pt-12 pb-6">
-  <div class="max-w-4xl mx-auto px-6 text-center">
+  <div class="max-w-4xl mx-auto px-6">
+
+    <!-- Newsletter -->
+    <div class="border-b border-white/5 pb-10 mb-10">
+      <div id="newsletter-success" class="hidden text-center mb-6">
+        <p class="text-teal font-semibold">✅ You're in! Check your inbox for peptide research updates.</p>
+      </div>
+      <div id="newsletter-form-wrap" class="max-w-md mx-auto text-center">
+        <h4 class="text-white font-semibold mb-2">🧬 Stay Updated on Peptide Research</h4>
+        <p class="text-white/50 text-sm mb-4">No spam. Just clinical insights from a licensed RN. Unsubscribe anytime.</p>
+        <form id="newsletter-form" action="https://formspree.io/f/xnjwaowp" method="POST" class="flex flex-col sm:flex-row gap-3">
+          <input type="hidden" name="_next" value="https://nurserobhealth.com/wolverine-stack?thanks=true&source=newsletter">
+          <input type="hidden" name="source" value="newsletter-wolverine-guide">
+          <input type="email" name="email" placeholder="your@email.com" required class="flex-1 bg-navy-800 border border-white/10 rounded-full px-4 py-2.5 text-sm text-white placeholder-white/30 outline-none focus:border-teal">
+          <button type="submit" class="bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-2.5 rounded-full text-sm whitespace-nowrap transition">Subscribe →</button>
+        </form>
+        <p class="text-muted text-xs mt-3">📧 Your email is private. Never shared.</p>
+      </div>
+    </div>
+
+    <div class="text-center">
     <a href="/" class="text-white font-bold text-lg">Nurse <span class="border-b-2 border-teal">Rob</span>, RN</a>
     <p class="text-muted text-sm mt-2">Licensed RN. Peptide education. No bro-science.</p>
     <div class="mt-6 text-muted text-xs leading-relaxed">
@@ -348,6 +382,57 @@ body { margin: 0; overflow-x: hidden; background: #FFFFFF; color: var(--body); f
   showThanks();
   window.addEventListener('pageshow', function(e) {
     if (e.persisted) showThanks();
+  });
+})();
+
+// Content upgrade form — native POST + inline success
+(function() {
+  var cuForm = document.getElementById('content-upgrade-form');
+  var cuSuccess = document.getElementById('content-upgrade-success');
+  if (!cuForm || !cuSuccess) return;
+
+  cuForm.addEventListener('submit', function() {
+    sessionStorage.setItem('nurserob_cu_thanks', 'true');
+  });
+
+  function showCUThanks() {
+    if (sessionStorage.getItem('nurserob_cu_thanks') === 'true') {
+      sessionStorage.removeItem('nurserob_cu_thanks');
+      cuForm.classList.add('hidden');
+      cuSuccess.classList.remove('hidden');
+    }
+  }
+
+  showCUThanks();
+  window.addEventListener('pageshow', function(e) {
+    if (e.persisted) showCUThanks();
+  });
+})();
+
+// Newsletter form — native POST + sessionStorage return detection
+(function() {
+  var nlForm = document.getElementById('newsletter-form');
+  if (nlForm) {
+    nlForm.addEventListener('submit', function() {
+      sessionStorage.setItem('nurserob_nl_thanks', 'true');
+    });
+  }
+
+  var nlSuccess = document.getElementById('newsletter-success');
+  var nlWrap = document.getElementById('newsletter-form-wrap');
+  if (!nlSuccess || !nlWrap) return;
+
+  function showNLThanks() {
+    if (sessionStorage.getItem('nurserob_nl_thanks') === 'true') {
+      sessionStorage.removeItem('nurserob_nl_thanks');
+      nlWrap.classList.add('hidden');
+      nlSuccess.classList.remove('hidden');
+    }
+  }
+
+  showNLThanks();
+  window.addEventListener('pageshow', function(e) {
+    if (e.persisted) showNLThanks();
   });
 })();
 </script>
