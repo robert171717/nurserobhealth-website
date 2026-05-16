@@ -3,6 +3,11 @@
     { "source": "/wolverine", "destination": "/wolverine.html" },
     { "source": "/wolverine-stack", "destination": "/wolverine-stack.html" },
     { "source": "/bpc-157-guide", "destination": "/bpc-157-guide.html" },
-    { "source": "/tb-500-guide", "destination": "/tb-500-guide.html" }
+    { "source": "/tb-500-guide", "destination": "/tb-500-guide.html" },
+    { "source": "/semaglutide", "destination": "/semaglutide.html" },
+    { "source": "/semaglutide-guide", "destination": "/semaglutide-guide.html" },
+    { "source": "/tirzepatide", "destination": "/tirzepatide.html" },
+    { "source": "/tirzepatide-guide", "destination": "/tirzepatide-guide.html" },
+    { "source": "/bpc-157-vs-tb-500", "destination": "/bpc-157-vs-tb-500.html" }
   ]
 }
