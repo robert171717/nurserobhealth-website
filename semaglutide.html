@@ -149,12 +149,34 @@ body.menu-open { overflow: hidden; }
     <div class="hidden md:flex items-center gap-6">
       <a href="/#about" class="text-white/70 hover:text-white transition text-sm font-medium">About</a>
       <a href="/#faq" class="text-white/70 hover:text-white transition text-sm font-medium">FAQ</a>
-      <a href="/wolverine-stack" class="text-white/70 hover:text-white transition text-sm font-medium">Wolverine Stack</a>
-      <a href="/bpc-157-guide" class="text-white/70 hover:text-white transition text-sm font-medium">BPC-157</a>
-      <a href="/tb-500-guide" class="text-white/70 hover:text-white transition text-sm font-medium">TB-500</a>
-      <a href="/semaglutide" class="text-teal font-semibold text-sm border-b border-teal">Semaglutide</a>
+      <a href="/bpc-157-guide" class="text-white/70 hover:text-white transition text-sm font-medium text-sm">BPC-157</a>
+      <a href="/tb-500-guide" class="text-white/70 hover:text-white transition text-sm font-medium text-sm">TB-500</a>
+      <a href="/semaglutide" class="text-teal font-semibold border-b border-teal text-sm">Semaglutide</a>
+      <a href="/tirzepatide" class="text-white/70 hover:text-white transition text-sm font-medium text-sm">Tirzepatide</a>
+      <a href="/bpc-157-vs-tb-500" class="text-white/70 hover:text-white transition text-sm font-medium text-sm">Comparison</a>
+      <a href="/wolverine-stack" class="text-white/70 hover:text-white transition text-sm font-medium text-sm">Wolverine Stack</a>
       <a href="https://cal.com/nurserob/peptide-consult" target="_blank" rel="noopener" class="bg-teal hover:bg-teal-dark text-white font-semibold px-5 py-2.5 rounded-full text-sm hover:scale-105 transition-all duration-200">Book a Consult →</a>
     </div>
+    <button id="menu-btn" class="md:hidden flex items-center justify-center w-11 h-11 text-white" aria-label="Open menu" aria-expanded="false">
+      <span class="flex flex-col gap-1.5"><span class="block w-6 h-0.5 bg-white rounded-full"></span><span class="block w-6 h-0.5 bg-white rounded-full"></span><span class="block w-6 h-0.5 bg-white rounded-full"></span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu" class="mobile-menu-panel fixed inset-0 bg-navy-900 backdrop-blur-xl z-[60] flex flex-col items-center justify-center gap-8 md:hidden" role="dialog" aria-hidden="true">
+  <button id="menu-close" class="absolute top-6 right-6 w-11 h-11 flex items-center justify-center text-white text-3xl leading-none" aria-label="Close menu">×</button>
+  <a href="/" class="text-white text-xl font-medium menu-link">Home</a>
+  <a href="/#about" class="text-white text-xl font-medium menu-link">About</a>
+  <a href="/bpc-157-guide" class="text-white font-medium text-xl menu-link">BPC-157</a>
+  <a href="/tb-500-guide" class="text-white font-medium text-xl menu-link">TB-500</a>
+  <a href="/semaglutide" class="text-teal font-semibold text-xl menu-link">Semaglutide</a>
+  <a href="/tirzepatide" class="text-white font-medium text-xl menu-link">Tirzepatide</a>
+  <a href="/bpc-157-vs-tb-500" class="text-white font-medium text-xl menu-link">BPC vs TB-500</a>
+  <a href="/wolverine-stack" class="text-white font-medium text-xl menu-link">Wolverine Stack</a>
+  <a href="https://cal.com/nurserob/peptide-consult" target="_blank" rel="noopener" class="bg-teal hover:bg-teal-dark text-white font-semibold px-8 py-3 rounded-full text-lg menu-link">Book a Consult →</a>
+</div>
+
     <button id="menu-btn" class="md:hidden flex items-center justify-center w-11 h-11 text-white" aria-label="Open menu" aria-expanded="false">
       <span class="flex flex-col gap-1.5"><span class="block w-6 h-0.5 bg-white rounded-full"></span><span class="block w-6 h-0.5 bg-white rounded-full"></span><span class="block w-6 h-0.5 bg-white rounded-full"></span></span>
     </button>
