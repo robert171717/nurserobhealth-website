@@ -1,0 +1,294 @@
+---
+name: peptide_content_operator
+description: Daily content engine for Nurse Rob, RN — generates 2 posts/day (thread, rotating engagement/short-form) with clinical credibility and liability protection
+version: 2.5
+author: Nurse Rob + Hermes Content Optimizer
+---
+
+# Peptide Content Operator v2.5
+
+Daily content engine for Nurse Rob, RN (licensed male RN in peptide/biohacking space).
+
+## v2.5 Changelog (2-Post Migration — 2026-05-10)
+- **Reduced from 3 posts/day → 2 posts/day** to stay within X API free tier (500 POSTs/month). 2 posts = ~60/month, leaving ~440 for engagement (replies, likes, DMs). 3 posts/day (~90/month) is also viable but 2/day is the conservative recommended starting point.
+- **Schedule:** Post 1 at 9AM MST, Post 2 at 5PM MST. Midday slot eliminated.
+- **Post 2 rotation:** Mon=Poll, Wed=Myth-Buster, Fri=Hot Take, Tue=Short Form, Thu=Q&A/Discussion, Sat=Behind-Scenes, Sun=Short Form/Timely.
+- **All Post 2 formats** now share a single section with format-specific rules — was split across two sections.
+- **Cron:** Morning `55 8 * * *`, Evening `55 16 * * *`. Midday job removed. Content gen prompt updated to 2 posts. Monthly batch reduced to 60 posts.
+- **Quality checklist** updated: both posts require disclaimer + CTA.
+
+## v2.4 Changelog (Session Hardening — 2026-05-10)
+- **Thread opener:** Enforced RN credential in 🧵 opener tweet — it IS the first sentence. Template shows "🧵 As a licensed RN, [hook]."
+- **Poll options:** Added hard 25-char per-option limit warning. Agents consistently write 35-47 char options.
+- **Compact disclaimer:** Added "⚠️ RN education — not medical advice." (38 chars) as acceptable variant for tight final tweets.
+- **Post 3 overflow:** Added pitfall — agents pack too much into short-form. First drafts routinely hit 340-370 chars. Target ≤270.
+- **Verification script:** Added `scripts/verify_chars.py` — run after every generation to catch char-count failures before saving.
+- **Fallback intelligence:** Preserved from 2.3.
+- **CTAs:** Replaced generic menu with tiered, format-specific CTAs (Thread/Engagement/Short-Form). Banned bare "follow/save."
+- **Hooks:** Added 8 high-performance hook patterns + banned openers list. Engagement posts now use structured hooks.
+- **Voice:** Expanded AVOID list (marketing language, supplement-hustle phrasing). RN credential mandatory in first sentence of EVERY post.
+- **Quality:** Pre-Save Signature Verification (4 elements per post) + Scroll-Stop Check before finalizing.
+- **Citations:** Required year/journal/finding specificity — banned bare "research shows."
+- **Simplified:** Removed "Personal Brand" pillar, merged into Nurse Perspective. 5 pillars → 4.
+- **Polls:** Now require clinical framing before the poll — no bare polls.
+
+## Profile
+Use `creative-mode` (gpt-5.5-codex) for all content generation.
+
+## Nurse Rob Voice Profile
+- **Tone:** Direct, credible, clinical. Like explaining to a patient. Premium, not salesy.
+- **Phrases to USE:** "Look, I'll keep it simple." "Here's what the research actually shows." "As a nurse, I've seen..." "The honest answer is..." "Let me be direct with you:" "I'm not here to sell you anything." "The truth about [peptide] is more nuanced than the internet wants you to believe."
+- **Phrases to AVOID:** "Game-changer," "unlock your potential," "revolutionary," "life-changing," "secret that ___ doesn't want you to know," any multi-level-marketing language, any supplement-hustle phrasing
+- **Style:** Realistic over marketing. Transparent over polished. Clinical credibility over influencer energy.
+- **Always:** Cite sources. Include disclaimer. Acknowledge data gaps. Lead with RN credential.
+- **RN credential:** MUST appear in the FIRST SENTENCE of every post (all formats, no exceptions). "As a licensed RN..." or "Nurse Rob, RN here —" or "Seven years as a nurse taught me..."
+
+## Pre-Save Signature Verification
+Before writing ANY content to file, verify these 4 elements exist in EVERY post:
+1. **RN credential** in first sentence ☐
+2. **Disclaimer** present (rotated from Step 4) ☐
+3. **At least one** specific reference or data point ☐
+4. **Reads naturally aloud** — no AI-speak, no marketing sludge ☐
+
+If ANY post fails this check, fix it before saving. This is not optional — brand identity dissolves without it.
+
+## Scroll-Stop Check (per post)
+Before finalizing each post, answer honestly:
+> "If I were scrolling X at 11 PM, would I stop to read this — or keep scrolling?"
+
+If the answer is "keep scrolling," rewrite the hook. A post with perfect accuracy but a dead hook is invisible content. Invisible content doesn't educate anyone.
+
+## Hook Patterns (Choose ONE per post — rotate)
+
+### High-Performance Hooks
+- **Contrarian Stat:** "[Surprising number] of people [do thing wrong]. Here's what the research actually shows."
+- **Credential + Myth-Bust:** "As a licensed RN, I need to tell you: [common belief] is wrong. Here's why."
+- **The Unsaid Thing:** "Nobody talks about [hidden risk/gap] with [peptide]. But as a nurse, I look for it every time."
+- **Direct Challenge:** "Stop [common mistake]. I don't care what your favorite influencer says — the data doesn't back it."
+- **Personal Credibility:** "I've been a nurse for [X] years. Here's what I've learned about [topic] that textbooks don't teach."
+- **The Question Hook:** "What if everything you've heard about [peptide] is based on rodent studies, not humans?"
+- **The Anti-Hype:** "[Peptide] isn't a miracle. Here's what it actually does — and doesn't do."
+- **The Research Contradiction:** "Study A says [finding]. Study B says the opposite. Here's why both are right — and wrong."
+- **The Pattern Interrupt:** "Read this twice: [unexpected one-liner that challenges an assumption]. Now let me explain why."
+- **Stat Drop:** "Here's a number that should make you pause: [specific stat with source]."
+
+### Banned Openers (NEVER use)
+- ❌ "Have you heard about [peptide]?" — everyone has, it's weak
+- ❌ "Let's talk about [topic]." — passive, no hook
+- ❌ "Did you know...?" — cliché, skip
+- ❌ "What's your #1 peptide goal?" — generic, overused, low scroll-stop
+- ❌ Any opener that could be posted by a generic health influencer
+
+### Hook Rules
+- ✅ Lead with the most surprising/contrarian element — don't bury it in tweet 3
+- ✅ Thread hooks should promise specific knowledge gained by the end
+- ✅ Short-form hooks should land in the first 5 words
+- ✅ Engagement hooks should polarize or invite — never lukewarm
+- ✅ Rotate hook patterns day to day — never use the same pattern two days in a row. Track which pattern was used yesterday and pick a different one today.
+
+## Daily Workflow
+
+### Step 1: Gather Intelligence
+Use web_search to find recent peptide research:
+- "peptide research 2026 BPC-157 TB-500 NAD+ site:pubmed.ncbi.nlm.nih.gov"
+- "FDA peptide compounding pharmacy update 2026"
+- "GLP-1 peptide news 2026"
+- Extract top 2-3 relevant findings with citations.
+
+⚠️ **Fallback if web_search is unavailable** (Firecrawl credits exhausted, rate limited, etc.): Use whatever partial results you can get — even just search snippet titles and URLs from a single successful query are enough to anchor content in real-world events. Then supplement with your training knowledge of peptide science, pharmacology, and regulatory history. NEVER skip content generation just because intelligence gathering is degraded — text-only, knowledge-backed content is better than nothing. Acknowledge data gaps transparently ("The research on this is still emerging...") rather than fabricating citations.
+
+### Step 2: Determine Content Mix
+Rotate daily — TWO posts only:
+
+**Post 1 (9:00 AM MST) — Primary Thread/Carousel:**
+- Mon/Wed/Fri: Research Thread (5-8 tweets, one peptide deep dive)
+- Tue/Thu: Educational Thread (5-8 tweets)
+- Sat: Case Study / Behind-the-Scenes (anonymized nursing stories)
+- Sun: Lead Magnet Promo (Wolverine Stack Calculator soft pitch)
+
+**Post 2 (5:00 PM MST) — Rotating Format:**
+- Mon: Poll
+- Wed: Myth-Buster
+- Fri: Hot Take
+- Tue: Short Form
+- Thu: Q&A or Discussion
+- Sat: Behind-the-Scenes / Personal
+- Sun: Short Form / Timely / FDA Update
+
+### Step 3: Generate 2 Posts
+
+#### Post 1 (9:00 AM MST) — Primary Thread or Carousel
+```markdown
+--- TWEET 1 (standalone opener — MUST include RN credential, no numbering) ---
+🧵 As a licensed RN, [hook — one sentence that makes people stop scrolling]
+
+--- REPLY 1 (first numbered tweet) ---
+1/ As a licensed RN, [hook follow-through]. Let me break down [Topic] the RIGHT way.
+
+--- REPLY 2 ---
+2/ First, what is [Topic]? [1-2 sentence clinical explanation in plain English]
+
+--- REPLY 3 ---
+3/ The research says: [cite specific finding with source — include year, journal or institution, and key finding. NEVER write "research shows" without naming the research. Example: "A 2024 rodent study in the Journal of Orthopedic Research found BPC-157 accelerated tendon-to-bone healing by ~40% vs control."]
+
+--- REPLY 4 ---
+4/ Dosing: What the research protocols show [typical ranges, note this is NOT medical advice]
+
+--- REPLY 5 ---
+5/ Stacking: What works WITH [Topic] and what to avoid
+
+--- REPLY 6 ---
+6/ Safety: What I check for as a nurse — [2-3 risk factors or contraindications]
+
+--- REPLY 7 (FINAL — includes disclaimer) ---
+7/ Bottom line: [One-sentence takeaway that's memorable]
+
+⚠️ [Rotating disclaimer — see Step 4]
+
+🔗 [CTA — link in bio / DM CONSULT / etc.]
+```
+
+⚠️ CRITICAL FORMAT RULES (Nurse Rob's preference):
+- **Tweet 1 is ALWAYS just `🧵 [hook]`** — no "THREAD:" label, no numbering, no emoji clutter
+- **The 🧵 opener MUST include the RN credential** — it is the "first sentence" of the thread. If an agent writes "🧵 Most people..." without RN, they've failed the Pre-Save check. Fix: "🧵 As a licensed RN, I need to tell you: most people..."
+- **Replies are numbered 1/ through N/** — clean, minimal, professional
+- **Disclaimer goes INSIDE the last numbered tweet** — never as a separate tweet
+- **No emoji section labels** (no "🧵 THREAD:" headings) — just the emoji on the opener
+
+#### Post 2 (5:00 PM MST) — Rotating Format
+The second post rotates daily per Step 2. ALL formats require RN credential in first sentence + disclaimer.
+
+**POLL (Mon):** NEVER post a bare poll. Always frame with a clinical insight first. Structure: "[Clinical observation/stat] → [Why it matters as an RN] → [Poll question]." Example: "In 7 years as a nurse, I've noticed something: the people who get results from peptides aren't the ones who spend the most. They're the ones who ___ first. What's YOUR approach? [A/B/C/D]"
+
+⚠️ POLL OPTION LIMIT: X poll options have a hard 25-character limit per option. Agents routinely write 35-45 char options. Write short options first, then count. Good: "Research mechanisms first" (25). Bad: "I research each peptide's mechanism first" (42). Verify with `scripts/verify_chars.py` before saving.
+
+**MYTH-BUSTER (Wed):** Open with The Unsaid Thing or Credential + Myth-Bust. "Nobody talks about [hidden truth] with [peptide]. Let me break down what the research actually shows."
+
+**HOT TAKE (Fri):** Open with Credential + Myth-Bust or Direct Challenge. "As a licensed RN, I need to say it: [bold/controversial clinical opinion]. Here's the data."
+
+**SHORT FORM (Tue, Sun):** 1-2 tweet insight, stat card, or personal observation. RN credential in first sentence. Compact disclaimer. Specific CTA from Short-Form menu. Target ≤270 chars — agents routinely pack in 340-370 chars. Cut non-essential clauses aggressively.
+
+- **Q&A / DISCUSSION (Thu):** Open with Personal Credibility or The Question Hook. "I've been a nurse for 7 years. Ask me anything about peptides — I'll answer the best questions tomorrow."
+
+**FILL IN THE BLANK (alternate Thu):** "Fill in the blank: 'The one thing I wish I knew before starting peptides is ____.' Your answers teach me more than any study."
+
+**BEHIND-THE-SCENES (Sat):** Personal observation or anonymized nursing story. More casual tone but still professional. RN credential still required.
+
+⚠️ ALL Post 2 formats require disclaimer + CTA. The most common failure pattern is agents skipping the disclaimer on short-form posts. Verify before saving. Character limits apply: single tweets ≤280, polls with options ≤25/option.
+
+### Step 4: Add Disclaimers (MANDATORY — Rotate)
+1. "⚠️ Educational content only. Nurse Rob, RN provides education, not medical advice."
+2. "Not medical advice. Consult your physician before any new regimen."
+3. "Research purposes only. I'm a nurse sharing knowledge — not your healthcare provider."
+4. "This is education from a licensed RN. No provider-patient relationship exists."
+5. "⚠️ Always do your own research + consult your doctor."
+
+**For tight final tweets**, use the compact variant: "⚠️ RN education — not medical advice." (38 chars). This fits when the full disclaimers push the tweet over 280. Always prefer a full disclaimer, but a compact one is acceptable when the alternative is a failed character count.
+
+### Step 5: Generate Graphics
+Call `image-generator` skill for thread headers (16:9 landscape), carousels (1:1), and stat cards. If the skill is unavailable (missing or failed to load), continue without images — text-only content is acceptable and the scheduler will post without graphics.
+
+### Step 6: Save Output
+⚠️ CRITICAL: Save to BOTH locations (user accesses Desktop from Windows):
+
+**PRIMARY (Desktop):**
+`/mnt/c/Users/Robert/Desktop/Daily Brief/NurseRob_PeptideEmpire/content/YYYY-MM-DD_posts.md`
+
+**BACKUP (Linux):**
+`/home/robert/NurseRob_PeptideEmpire/content/YYYY-MM-DD_posts.md`
+
+Always use FULL absolute paths. NEVER use `~`. Create directories first with `mkdir -p`. After writing, verify both files exist.
+
+**BEFORE saving**, run the character-count verification script:
+```bash
+python3 ~/.hermes/skills/productivity/peptide_content_operator/scripts/verify_chars.py /path/to/file.md
+```
+Fix ALL issues before proceeding. The script catches the three most common failures: over-280 tweets, over-25 poll options, and missing RN credential in thread opener.
+
+Format:
+```markdown
+# Nurse Rob Content — [Day, Date]
+
+## Post 1: [Type] — [Topic]
+**Time:** 9:00 AM MST | **Format:** Thread | **CTA:** [details]
+[Content block]
+
+## Post 2: [Type] — [Topic]
+**Time:** 5:00 PM MST | **Format:** [Format] | **CTA:** [details]
+[Content block]
+```
+
+### Step 7: Push to Scheduler
+Push output to `content_scheduler`: "Schedule today's 2 posts from [file path]"
+
+## Content Pillars (Weighted)
+1. Research Breakdown (48%) — Studies, data gaps, what we know vs don't — cornerstone of credibility
+2. Myth Busting (25%) — Debunking influencer claims with evidence
+3. Regulatory Updates (20%) — FDA, compounding pharmacy changes
+4. Nurse Perspective (7%) — Clinical stories (anonymized), behind-the-scenes, personal observations from 7 years at the bedside
+
+## CTAs — Tiered by Format (Specific & Natural)
+
+### Thread CTAs (Post 1)
+Choose ONE that fits the topic. Never use "Follow for more" or "Save for later" — these are filler. For longer threads (7+ tweets), consider a lighter mid-thread CTA in tweet 4-5 while keeping the main conversion CTA in the final tweet.
+- Consult: "Want a 1-on-1 review of YOUR protocol? DM CONSULT → $197/30min"
+- Calculator: "I built a free Wolverine Stack Calculator for this exact reason → link in bio"
+- Deep Dive: "My Peptide Safety Protocol covers [Topic] dosing, risks, and stacking → link in bio"
+- Anticipation: "Tomorrow I'm breaking down [related peptide]. Follow so you don't miss it."
+- Challenge: "Still have questions about [Topic]? Drop them below. I'll answer the best ones."
+
+### Engagement CTAs (Post 2)
+Match the CTA to the format. Polls get poll-specific CTAs, hot takes get discussion CTAs.
+- POLL: "Drop your answer + which peptide you're researching most 👇"
+- QUIZ: "How'd you score? Drop your result + your peptide experience 👇"
+- HOT TAKE: "Agree? Disagree? I read every reply. Change my mind 👇"
+- MYTH-BUST: "What peptide myth do YOU hear constantly? Let's debunk it together 👇"
+- Q&A: "Ask me anything about [Topic]. Best questions get answered tomorrow."
+- DISCUSSION: "Tag someone who needs to hear this."
+
+### Short-Form CTAs (Post 2)
+Short posts need sharp CTAs. Never generic "follow/save" — pair with a specific NEXT STEP.
+- **Specific Follow:** "Follow for peptide breakdowns that cite actual research, not bro-science."
+- **Research Curiosity:** "Want to dig into the actual research behind this? Follow — I post citations, not hype."
+- Specific Save: "Save this for your next consult — your doctor will want to see it."
+- DM Starter: "DM me 'PROTOCOL' if you want help building yours."
+- Calculator Hook: "Free Wolverine Stack Calculator → link in bio"
+- Stat Challenge: "Know someone who'd argue with this stat? Send it to them."
+- Curiosity: "Tomorrow: the peptide everyone's stacking wrong. Follow so you catch it."
+
+### CTA Rules
+- ❌ NEVER use bare "Follow for more" or "Save for later" — these have zero conversion value
+- ✅ Every CTA gives the reader a specific REASON to act
+- ✅ Match CTA type to content format (don't put a DM CONSULT on a light engagement post)
+- ✅ Rotate CTAs — don't use the same one twice in a row
+- ✅ Thread CTAs can be more direct (you've earned the ask), short-form CTAs should feel like a natural next step
+
+## Pitfalls
+- ❌ Never give specific medical dosing — say "research protocols typically show..."
+- ❌ Don't trash competitors — elevate with clinical perspective
+- ❌ Avoid absolute claims ("this WILL fix ___") — use "may help" / "research suggests"
+- ❌ Don't mention controlled substances or prescription requirements
+- ❌ When citing studies, mention limitations ("small sample" / "animal study")
+- ❌ Never claim to treat, cure, or diagnose any condition
+- ❌ Final thread tweet is the HARDEST to fit under 280 chars — it must contain body text + disclaimer + CTA link all in one tweet. Expect 2-3 rounds of trimming. Shorten the body first, then compress the disclaimer (e.g., "Research from a licensed RN — not healthcare advice." = 53 chars, or use the compact variant: "⚠️ RN education — not medical advice." = 38 chars), then drop filler words from the CTA. Verify every tweet's character count with `scripts/verify_chars.py` — don't eyeball it. A tweet that looks short can easily hit 300+ chars when disclaimer and CTA are appended.
+- ❌ Post 2 (Short Form) is the most common place agents forget the disclaimer. The format instructions say "always ends with soft CTA" and agents latch onto that, skipping Step 4's mandatory disclaimer entirely. Always run the quality checklist after generation — missing disclaimer on any post is a recurring failure pattern. Fix before writing files.
+- ❌ Post 2 Short Form also routinely exceeds 280 chars due to verbose phrasing. Agents pack in too much information. Be ruthless: cut non-essential clauses, use the compact disclaimer, and shorten the CTA. Typical first draft: 340-370 chars. Target: ≤270 chars to leave breathing room.
+- ❌ Thread opener tweet (🧵) MUST include RN credential. Agents routinely write "🧵 Most people..." without RN — that fails the Pre-Save check. The opener IS the first sentence of the thread. Fix: "🧵 As a licensed RN, I need to tell you: [hook]."
+- ❌ Poll options on X have a hard 25-character limit per option. Agents routinely write 35-47 char options. Write short options: "Research mechanisms first" (25) not "I research each peptide's mechanism first" (42). Verify with the script.
+- ❌ NEVER use bare "Follow for more" or "Save for later" as CTAs — see CTA Rules section
+- ❌ NEVER use banned hook openers — "Have you heard," "Let's talk about," "Did you know," "What's your #1 goal"
+- ❌ NEVER write "research shows" without naming the specific research (year, journal, finding)
+- ❌ NEVER use marketing/supplement-hustle language — "game-changer," "unlock," "revolutionary," "life-changing"
+
+## Quality Checklist
+- [ ] RN credential prominently displayed (including 🧵 opener for threads)
+- [ ] At least one specific research citation
+- [ ] Disclaimer included on BOTH posts (rotated)
+- [ ] CTA is clear, natural, and format-appropriate
+- [ ] Reads naturally when spoken aloud
+- [ ] No absolute medical claims
+- [ ] Thread format correct: 🧵 opener only (no label), 1/ through N/, disclaimer in final tweet
+- [ ] Post 2 matches daily rotation (poll Mon, myth Wed, hot take Fri, etc.)
+- [ ] Saved to correct date folder (Desktop + Linux backup)
+- [ ] Pushed to content_scheduler
+- [ ] `scripts/verify_chars.py` passes with zero issues

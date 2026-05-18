@@ -1,0 +1,377 @@
+{
+  "pipeline_started": "2026-04-28",
+  "last_updated": "2026-05-13T09:30:00-07:00",
+  "sequence_template": {
+    "stage_0": {
+      "day": 0,
+      "name": "Research & Verification",
+      "description": "Discover, verify licenses, score pharmacies"
+    },
+    "stage_1": {
+      "day": 1,
+      "name": "Introduction Email",
+      "description": "I'm Nurse Rob, RN \u2014 I educate peptide users..."
+    },
+    "stage_2": {
+      "day": 4,
+      "name": "Value Add Email",
+      "description": "Here's what your customers are asking me..."
+    },
+    "stage_3": {
+      "day": 7,
+      "name": "Proposal Email",
+      "description": "Affiliate partnership / sponsored content proposal"
+    },
+    "stage_4": {
+      "day": 14,
+      "name": "Case Study Email",
+      "description": "Results from a mutual peptide topic"
+    },
+    "stage_5": {
+      "day": 21,
+      "name": "Final Follow-Up",
+      "description": "Last check-in, no hard sell"
+    },
+    "stage_done": {
+      "day": 30,
+      "name": "Move to Quarterly",
+      "description": "Remove from active \u2192 quarterly check-in"
+    }
+  },
+  "outreach_items": [
+    {
+      "pharmacy_id": "medivera",
+      "pharmacy_name": "MediVera Compounding Pharmacy",
+      "score": 14,
+      "email": null,
+      "phone": "877-531-1147",
+      "contact_channel": "contact_form",
+      "contact_url": "https://mediverarx.com/",
+      "current_stage": 0,
+      "stage_history": [
+        {
+          "stage": 0,
+          "completed": "2026-05-13T09:07:00-07:00",
+          "notes": "Research & verification completed. Dual PCAB-accredited (sterile & non-sterile), 48-state, 56K sq ft facility, 25+ years. \u2b50 TOP CANDIDATE."
+        }
+      ],
+      "next_action_date": "2026-05-13",
+      "next_action": "\u26a0\ufe0f MANUAL: Submit Intro Email via contact form at mediverarx.com (no direct email available). Phone: 877-531-1147 as backup.",
+      "responded": false,
+      "response_type": null,
+      "status": "needs_manual"
+    },
+    {
+      "pharmacy_id": "strive",
+      "pharmacy_name": "Strive Pharmacy",
+      "score": 12,
+      "email": null,
+      "phone": null,
+      "contact_channel": "contact_form",
+      "contact_url": "https://www.strivepharmacy.com/contact",
+      "current_stage": 0,
+      "stage_history": [
+        {
+          "stage": 0,
+          "completed": "2026-05-13T09:07:00-07:00",
+          "notes": "Research & verification completed. PCAB + NABP + LegitScript triple-accredited. Nationwide locations. Tirzepatide + glycine + B12."
+        }
+      ],
+      "next_action_date": "2026-05-13",
+      "next_action": "\u26a0\ufe0f MANUAL: Submit Intro Email via contact form at strivepharmacy.com. No phone available \u2014 contact form only.",
+      "responded": false,
+      "response_type": null,
+      "status": "needs_manual"
+    },
+    {
+      "pharmacy_id": "epiq_scripts",
+      "pharmacy_name": "Epiq Scripts",
+      "score": 11,
+      "email": null,
+      "phone": null,
+      "contact_channel": "contact_form",
+      "contact_url": "https://epiqscripts.com/contact",
+      "current_stage": 0,
+      "stage_history": [
+        {
+          "stage": 0,
+          "completed": "2026-05-13T09:07:00-07:00",
+          "notes": "Research & verification completed. PCAB + URAC + LegitScript. Zero warning letters. Fast fulfillment."
+        }
+      ],
+      "next_action_date": "2026-05-13",
+      "next_action": "\u26a0\ufe0f MANUAL: Submit Intro Email via contact form at epiqscripts.com.",
+      "responded": false,
+      "response_type": null,
+      "status": "needs_manual"
+    },
+    {
+      "pharmacy_id": "emerald_hills",
+      "pharmacy_name": "Emerald Hills Pharmacy",
+      "score": 10,
+      "email": "customerservice@emeraldhillspharmacy.com",
+      "phone": "954-983-3336",
+      "contact_channel": "email",
+      "contact_url": null,
+      "current_stage": 1,
+      "stage_history": [
+        {
+          "stage": 0,
+          "completed": "2026-05-13T09:07:00-07:00",
+          "notes": "Research & verification completed. FL-licensed PH35337 verified. ISO-certified cleanrooms. Direct email available. BPC-157, NAD+, Sermorelin."
+        },
+        {
+          "stage": 1,
+          "sent": "2026-05-13T09:30:00-07:00",
+          "template": "intro",
+          "notes": "Stage 1 Intro sent to customerservice@emeraldhillspharmacy.com \u2014 direct affiliate ask. Highlighted ISO cleanrooms, BPC-157/NAD+/Sermorelin lineup."
+        }
+      ],
+      "next_action_date": "2026-05-16",
+      "next_action": "Wait 3 days. If no response by May 16, send Stage 2 Value Add email.",
+      "responded": false,
+      "response_type": null,
+      "status": "active"
+    },
+    {
+      "pharmacy_id": "empower",
+      "pharmacy_name": "Empower Pharmacy",
+      "score": 7,
+      "email": null,
+      "phone": "877-562-8577",
+      "contact_channel": "contact_form",
+      "contact_url": "https://www.empowerpharmacy.com/contact/",
+      "current_stage": 0,
+      "stage_history": [
+        {
+          "stage": 0,
+          "completed": "2026-04-28T10:00:00-07:00",
+          "notes": "Research & verification completed. PCAB-accredited 503A/503B. Tirzepatide + Semaglutide."
+        },
+        {
+          "stage": 0,
+          "completed": "2026-05-05T10:00:00-07:00",
+          "notes": "\u26a0\ufe0f MANUAL OUTREACH NEEDED: No direct email. Must submit via contact form. Phone backup."
+        },
+        {
+          "stage": 0,
+          "completed": "2026-05-13T09:07:00-07:00",
+          "notes": "\u26a0\ufe0f SCORE DOWNGRADED 10\u21927. New findings: FDA Warning Letter (4/2/2025), Form 483 (11/14/2025, still open), 2nd Warning Letter (10/15/2021), active Eli Lilly litigation. High-risk despite PCAB."
+        }
+      ],
+      "next_action_date": "2026-05-13",
+      "next_action": "\u26a0\ufe0f DEFER: Score downgraded to 7 due to FDA enforcement actions. Not recommended for outreach until FDA status improves.",
+      "responded": false,
+      "response_type": null,
+      "status": "deferred_fda_risk"
+    },
+    {
+      "pharmacy_id": "farmakeio",
+      "pharmacy_name": "FarmaKeio Pharmacy Network",
+      "score": 10,
+      "email": null,
+      "phone": "888-204-7576",
+      "contact_channel": "contact_form",
+      "contact_url": "https://farmakeio.com/custom-compounding/",
+      "current_stage": 0,
+      "stage_history": [
+        {
+          "stage": 0,
+          "completed": "2026-04-28T10:00:00-07:00",
+          "notes": "Research & verification completed. PCAB+IPS accredited. 49-state licensed. Dedicated peptide page."
+        },
+        {
+          "stage": 0,
+          "completed": "2026-05-05T10:00:00-07:00",
+          "notes": "\u26a0\ufe0f MANUAL OUTREACH NEEDED: No direct email. Must submit via contact form. Phone: 888-204-7576 as backup."
+        },
+        {
+          "stage": 0,
+          "completed": "2026-05-13T09:07:00-07:00",
+          "notes": "Still needs manual outreach. Re-verify: PCAB + IPS + ACHC confirmed. Still top priority."
+        }
+      ],
+      "next_action_date": "2026-05-13",
+      "next_action": "\u26a0\ufe0f PENDING MANUAL: Submit Intro via contact form at farmakeio.com/custom-compounding/. Phone: 888-204-7576.",
+      "responded": false,
+      "response_type": null,
+      "status": "needs_manual"
+    },
+    {
+      "pharmacy_id": "cre8",
+      "pharmacy_name": "CRE8 Pharmacy",
+      "score": 10,
+      "email": null,
+      "phone": "888-224-5181",
+      "contact_channel": "contact_form",
+      "contact_url": "https://www.cre8pharmacy.com/contact/",
+      "current_stage": 0,
+      "stage_history": [
+        {
+          "stage": 0,
+          "completed": "2026-04-28T10:00:00-07:00",
+          "notes": "Research & verification completed. PCAB-accredited. Primary focus on compounding peptides."
+        },
+        {
+          "stage": 0,
+          "completed": "2026-05-05T10:00:00-07:00",
+          "notes": "\u26a0\ufe0f MANUAL OUTREACH NEEDED: No direct email. Must submit via contact form. Phone: 888-224-5181 as backup."
+        },
+        {
+          "stage": 0,
+          "completed": "2026-05-13T09:07:00-07:00",
+          "notes": "Still needs manual outreach. 'Doctor's Best Choice for Compounding Peptides' \u2014 ideal fit."
+        }
+      ],
+      "next_action_date": "2026-05-13",
+      "next_action": "\u26a0\ufe0f PENDING MANUAL: Submit Intro Email via contact form at cre8pharmacy.com/contact. Phone: 888-224-5181 as backup.",
+      "responded": false,
+      "response_type": null,
+      "status": "needs_manual"
+    },
+    {
+      "pharmacy_id": "hallandale",
+      "pharmacy_name": "Hallandale Pharmacy",
+      "score": 10,
+      "email": "orders@hallandalerx.com",
+      "phone": null,
+      "contact_channel": "email",
+      "contact_url": null,
+      "current_stage": 2,
+      "stage_history": [
+        {
+          "stage": 0,
+          "completed": "2026-04-28T10:00:00-07:00",
+          "notes": "Research & verification completed. PCAB-accredited. GLP-1 focused. Direct email available."
+        },
+        {
+          "stage": 1,
+          "sent": "2026-05-05T10:00:00-07:00",
+          "template": "intro",
+          "notes": "Intro email sent to orders@hallandalerx.com \u2014 highlighted GLP-1 education section + PCAB accreditation."
+        },
+        {
+          "stage": 2,
+          "sent": "2026-05-10T17:30:00-07:00",
+          "template": "clarifying_followup",
+          "notes": "Sent clarifying follow-up with direct affiliate ask. Original v1.0 intro was vague \u2014 follow-up makes the affiliate ask explicit."
+        }
+      ],
+      "next_action_date": "2026-05-17",
+      "next_action": "Wait 7 days for response to direct affiliate ask follow-up (sent 2026-05-10). If no response by May 17, send Stage 3 Proposal.",
+      "responded": false,
+      "response_type": null,
+      "status": "active"
+    },
+    {
+      "pharmacy_id": "olympia",
+      "pharmacy_name": "Olympia Pharmaceuticals",
+      "score": 7,
+      "email": null,
+      "phone": "800-991-9079",
+      "contact_channel": "contact_form",
+      "contact_url": "https://www.olympiapharmacy.com/contact/",
+      "current_stage": 0,
+      "stage_history": [
+        {
+          "stage": 0,
+          "completed": "2026-04-28T10:00:00-07:00",
+          "notes": "Research & verification completed. 503A/503B FDA-registered. PCAB unconfirmed. NAD+ focused."
+        },
+        {
+          "stage": 0,
+          "completed": "2026-05-05T10:00:00-07:00",
+          "notes": "\u26a0\ufe0f MANUAL OUTREACH NEEDED: No direct email. Must submit via contact form."
+        },
+        {
+          "stage": 0,
+          "completed": "2026-05-13T09:07:00-07:00",
+          "notes": "Still needs manual outreach. Lower priority (score 7, PCAB unconfirmed)."
+        }
+      ],
+      "next_action_date": "2026-05-13",
+      "next_action": "\u26a0\ufe0f PENDING MANUAL: Submit Intro Email via contact form. Phone: 800-991-9079 as backup.",
+      "responded": false,
+      "response_type": null,
+      "status": "needs_manual"
+    },
+    {
+      "pharmacy_id": "valor",
+      "pharmacy_name": "Valor Compounding Pharmacy",
+      "score": 6,
+      "email": "customercare@vcprx.com",
+      "phone": "855-554-2889",
+      "contact_channel": "email",
+      "contact_url": null,
+      "current_stage": 5,
+      "stage_history": [
+        {
+          "stage": 0,
+          "completed": "2026-04-28T10:00:00-07:00",
+          "notes": "Research & verification completed. PCAB-accredited 503A CA. Handles Schedule III \u2014 lower priority. Primarily BHRT."
+        },
+        {
+          "stage": 1,
+          "sent": "2026-05-05T10:00:00-07:00",
+          "template": "intro",
+          "notes": "Intro email sent to customercare@vcprx.com \u2014 highlighted PCAB accreditation."
+        },
+        {
+          "stage": 1,
+          "completed": "2026-05-10T17:30:00-07:00",
+          "notes": "Response received: no peptides. Marked declined. Hormone testing kit angle flagged for Q3."
+        }
+      ],
+      "next_action_date": "2026-08-05",
+      "next_action": "QUARTERLY CHECK-IN: Revisit for hormone testing kit affiliate opportunity.",
+      "responded": true,
+      "response_type": "declined_for_peptides",
+      "status": "declined",
+      "response_notes": "Valor does not compound peptides. Offers BHRT formulations and hormone testing kits only. Potential affiliate for hormone testing kits Q3."
+    },
+    {
+      "pharmacy_id": "belmar",
+      "pharmacy_name": "Belmar Pharma Solutions",
+      "score": 8,
+      "email": null,
+      "phone": null,
+      "contact_channel": "contact_form",
+      "contact_url": "https://www.belmarpharmasolutions.com/contact",
+      "current_stage": 0,
+      "stage_history": [
+        {
+          "stage": 0,
+          "completed": "2026-05-13T09:07:00-07:00",
+          "notes": "Research & verification completed. National 503A/503B, 6 facilities. \u26a0\ufe0f Feb 2026 FDA warning letter (marketing claims). PCAB unconfirmed."
+        }
+      ],
+      "next_action_date": "2026-05-13",
+      "next_action": "\u26a0\ufe0f PENDING REVIEW: Deferred due to FDA warning letter. PCAB unconfirmed. Monitor for next scout run.",
+      "responded": false,
+      "response_type": null,
+      "status": "deferred_fda_risk"
+    },
+    {
+      "pharmacy_id": "enovex",
+      "pharmacy_name": "Enovex Compounding Pharmacy",
+      "score": 7,
+      "email": null,
+      "phone": "888-366-8396",
+      "contact_channel": "contact_form",
+      "contact_url": "https://enovexrx.com/contact/",
+      "current_stage": 0,
+      "stage_history": [
+        {
+          "stage": 0,
+          "completed": "2026-05-13T09:07:00-07:00",
+          "notes": "Research & verification completed. ACHC/PCAB-accredited 503A. Not primarily peptide-focused. BHRT and pain management core."
+        }
+      ],
+      "next_action_date": "2026-05-13",
+      "next_action": "\u26a0\ufe0f LOW PRIORITY: Not peptide-focused. Consider if main targets don't respond. Phone: 888-366-8396.",
+      "responded": false,
+      "response_type": null,
+      "status": "low_priority"
+    }
+  ]
+}

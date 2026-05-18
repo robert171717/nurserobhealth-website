@@ -1,0 +1,134 @@
+{
+  "last_updated": "2026-05-18T13:03:01.018425+00:00",
+  "users": [
+    {
+      "username": "@AlmcdDon",
+      "reply_id": "2054186128794620194",
+      "replied_at": "2026-05-12T13:05:56.078237+00:00",
+      "platform": "x",
+      "post_url": "https://x.com/AlmcdDon/status/2053514611891064922"
+    },
+    {
+      "username": "@unaveridad",
+      "reply_id": "2054186170813190198",
+      "replied_at": "2026-05-12T13:05:56.078237+00:00",
+      "platform": "x",
+      "post_url": "https://x.com/unaveridad/status/2054104646315016356"
+    },
+    {
+      "username": "@BadTechBandit",
+      "reply_id": "2054186177704448396",
+      "replied_at": "2026-05-12T13:05:56.078237+00:00",
+      "platform": "x",
+      "post_url": "https://x.com/BadTechBandit/status/2054018245070352745"
+    },
+    {
+      "username": "@FrankGowalski",
+      "reply_id": "2054095287468040526",
+      "replied_at": "2026-05-12T07:04:25.375820+00:00",
+      "platform": "x",
+      "post_url": "https://x.com/FrankGowalski/status/2054060158494642569"
+    },
+    {
+      "username": "@DontGetRektBro",
+      "reply_id": "2054276288622305712",
+      "replied_at": "2026-05-12T19:03:48.926649+00:00",
+      "platform": "x",
+      "post_url": "https://x.com/DontGetRektBro/status/2054115446287118634",
+      "method": "mention_post"
+    },
+    {
+      "username": "@radmadvlad",
+      "reply_id": "2054276295534453216",
+      "replied_at": "2026-05-12T19:03:48.926649+00:00",
+      "platform": "x",
+      "post_url": "https://x.com/radmadvlad/status/2054064125018612096",
+      "method": "mention_post"
+    },
+    {
+      "username": "@TheHauskarl",
+      "reply_id": "2054366710623264776",
+      "replied_at": "2026-05-13T01:03:06.679391+00:00",
+      "platform": "x",
+      "post_url": "https://x.com/TheHauskarl/status/2054354371094188059",
+      "method": "mention_post"
+    },
+    {
+      "username": "@Srwachiman",
+      "reply_id": "2054598023557046712",
+      "replied_at": "2026-05-13T16:22:15.177183+00:00",
+      "platform": "x",
+      "post_url": "https://x.com/Srwachiman/status/2054585233903690231",
+      "method": "mention_post"
+    },
+    {
+      "username": "@Vibrato444",
+      "reply_id": "2054598030389576089",
+      "replied_at": "2026-05-13T16:22:15.177183+00:00",
+      "platform": "x",
+      "post_url": "https://x.com/Vibrato444/status/2054544981952430529",
+      "method": "mention_post"
+    },
+    {
+      "username": "@arturbikbaev",
+      "reply_id": "2054638650336350588",
+      "replied_at": "2026-05-13T19:03:37.112753+00:00",
+      "platform": "x",
+      "post_url": "https://x.com/arturbikbaev/status/2054627827996045485",
+      "method": "mention_post"
+    },
+    {
+      "username": "@loztruthseeker",
+      "classification": "hot",
+      "replied_at": "2026-05-14T19:02:59.632740+00:00",
+      "platform": "x",
+      "type": "public_mention_post"
+    },
+    {
+      "username": "@sou_caffeine",
+      "classification": "hot",
+      "replied_at": "2026-05-14T19:02:59.632740+00:00",
+      "platform": "x",
+      "type": "public_mention_post"
+    },
+    {
+      "username": "@Wake__Up__01",
+      "reply_id": "2055363462717423658",
+      "replied_at": "2026-05-15T19:04:00.136433+00:00",
+      "platform": "x",
+      "post_url": "https://x.com/Wake__Up__01/status/2055229249661890879"
+    },
+    {
+      "username": "@KielSalman",
+      "reply_id": "2055363481356869729",
+      "replied_at": "2026-05-15T19:04:00.136433+00:00",
+      "platform": "x",
+      "post_url": "https://x.com/KielSalman/status/2055108183811924230"
+    },
+    {
+      "username": "@onlywens",
+      "reply_id": "2056087815746687241",
+      "replied_at": "2026-05-17T19:02:07.371457+00:00",
+      "platform": "x",
+      "post_url": "https://x.com/onlywens/status/2056045850124861947",
+      "method": "mention_post"
+    },
+    {
+      "username": "@Anarchy_Golf631",
+      "reply_id": "2056087822633762863",
+      "replied_at": "2026-05-17T19:02:07.371457+00:00",
+      "platform": "x",
+      "post_url": "https://x.com/Anarchy_Golf631/status/2056048999484760351",
+      "method": "mention_post"
+    },
+    {
+      "username": "@Satoshipeptides",
+      "reply_id": "2056359845293326605",
+      "replied_at": "2026-05-18T13:03:01.018425+00:00",
+      "platform": "x",
+      "post_url": "https://x.com/Satoshipeptides/status/2056027634237382697",
+      "method": "mention_post"
+    }
+  ],
+  "note": "Active xurl API \u2014 replies sent as public educational mention posts"
+}

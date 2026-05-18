@@ -1,0 +1,89 @@
+<!-- ============================================================ -->
+<!-- JSON-LD STRUCTURED DATA for Nurse Rob Health               -->
+<!-- ============================================================ -->
+<!-- PASTE THESE TWO <script> BLOCKS into <head> of every page  -->
+<!-- Block 1: Organization + WebSite (every page)               -->
+<!-- Block 2: Person (homepage only — helps Knowledge Panel)    -->
+<!-- After deploying: test at https://validator.schema.org      -->
+<!-- ============================================================ -->
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- ORGANIZATION + WEBSITE SCHEMA — paste on ALL pages          -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Nurse Rob Health",
+      "url": "https://nurserobhealth.com",
+      "description": "Licensed RN providing research-backed peptide education, 1-on-1 protocol reviews, and the free Wolverine Stack Calculator.",
+      "logo": "https://nurserobhealth.com/og-card.jpg",
+      "sameAs": [
+        "https://x.com/NurseRobHealth"
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "Nurse Rob",
+        "honorificSuffix": "RN",
+        "jobTitle": "Licensed Peptide Educator & Consultant"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Consultation Booking",
+        "url": "https://cal.com/nurserob/peptide-consult",
+        "availableLanguage": "English"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "name": "Nurse Rob Health",
+      "url": "https://nurserobhealth.com",
+      "inLanguage": "en",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://nurserobhealth.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>
+
+<!-- ════════════════════════════════════════════════════════════ -->
+<!-- PERSON SCHEMA — paste on HOMEPAGE only (powers Knowledge Panel) -->
+<!-- ════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Nurse Rob",
+  "honorificSuffix": "RN",
+  "jobTitle": "Licensed Peptide Educator & Consultant",
+  "description": "Licensed registered nurse cutting through peptide bro-science with real clinical knowledge. Research-backed education — not medical advice.",
+  "url": "https://nurserobhealth.com",
+  "sameAs": [
+    "https://x.com/NurseRobHealth"
+  ],
+  "knowsAbout": [
+    "Peptide Therapy",
+    "BPC-157",
+    "TB-500",
+    "Thymosin Beta-4",
+    "Wolverine Stack",
+    "Peptide Dosing Protocols",
+    "Tissue Regeneration",
+    "Clinical Research Analysis",
+    "Injection Safety"
+  ],
+  "makesOffer": {
+    "@type": "Offer",
+    "name": "1-on-1 Peptide Protocol Review",
+    "price": "197.00",
+    "priceCurrency": "USD",
+    "url": "https://cal.com/nurserob/peptide-consult",
+    "description": "30-minute educational consultation with a licensed RN. Not medical advice — educational consulting only."
+  }
+}
+</script>

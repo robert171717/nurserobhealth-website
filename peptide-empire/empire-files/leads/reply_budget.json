@@ -1,0 +1,44 @@
+{
+  "monthly_cap": 500,
+  "reserve_for_content": 62,
+  "scheduled_content_per_day": 2,
+  "replies_today": 0,
+  "replies_this_month": 16,
+  "today_date": "2026-05-18",
+  "hard_limits": {
+    "per_scan_max": 3,
+    "per_day_max": 6,
+    "per_user_lifetime_max": 3,
+    "min_account_age_days": 7,
+    "min_followers": 10
+  },
+  "budget_tiers": {
+    "green": {
+      "min_remaining": 300,
+      "per_scan": 3,
+      "per_day": 6
+    },
+    "yellow": {
+      "min_remaining": 150,
+      "per_scan": 2,
+      "per_day": 4
+    },
+    "red": {
+      "min_remaining": 50,
+      "per_scan": 1,
+      "per_day": 2,
+      "alert": true
+    },
+    "stop": {
+      "min_remaining": 0,
+      "per_scan": 0,
+      "per_day": 0,
+      "alert": true
+    }
+  },
+  "alerts": [],
+  "last_scan_lead_count": 2,
+  "spike_threshold": 10,
+  "abnormal_scan_count": 0,
+  "last_reply_at": "2026-05-14T19:02:59.632740+00:00"
+}

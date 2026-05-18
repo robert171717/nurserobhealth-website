@@ -1,0 +1,742 @@
+{
+  "jobs": [
+    {
+      "id": "31d78cdb31c7",
+      "name": "Daily Content Generation",
+      "prompt": "Generate today's 2 Nurse Rob peptide posts for X/Twitter. Use the peptide_content_operator skill (v2.5 \u2014 2 posts/day format, 9AM + 5PM MST). \n\nPost 1 at 9AM: Primary Thread or Carousel (rotating: Mon/Wed/Fri=Research Thread, Tue/Thu=Educational, Sat=Case Study, Sun=Lead Magnet Promo).\n\nPost 2 at 5PM: Rotating format (Mon=Poll, Wed=Myth-Buster, Fri=Hot Take, Tue=Short Form, Thu=Q&A, Sat=Behind-Scenes, Sun=Short Form/Timely).\n\nCRITICAL: Generate EXACTLY 2 posts. No midday post. No third post.\n\nSave to BOTH:\n- PRIMARY: /mnt/c/Users/Robert/Desktop/Daily Brief/NurseRob_PeptideEmpire/content/YYYY-MM-DD_posts.md\n- BACKUP: /home/robert/NurseRob_PeptideEmpire/content/YYYY-MM-DD_posts.md\n\nRun verify_chars.py after generation. If web_search fails, use training knowledge \u2014 never skip generation.",
+      "skills": [
+        "peptide_content_operator",
+        "image_generator"
+      ],
+      "skill": "peptide_content_operator",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 7 * * *",
+        "display": "0 7 * * *"
+      },
+      "schedule_display": "0 7 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 14
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-27T20:53:14.068996-07:00",
+      "next_run_at": "2026-05-12T07:00:00-07:00",
+      "last_run_at": "2026-05-11T12:07:02.815494-07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "79165fb0ded9",
+      "name": "Schedule Morning Post (9AM)",
+      "prompt": "Push morning post (9AM MST) from today's content file to X via xurl. Use the content_scheduler skill.",
+      "skills": [
+        "content_scheduler"
+      ],
+      "skill": "content_scheduler",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "55 8 * * *",
+        "display": "55 8 * * *"
+      },
+      "schedule_display": "55 8 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 15
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-27T20:53:14.213229-07:00",
+      "next_run_at": "2026-05-12T08:55:00-07:00",
+      "last_run_at": "2026-05-11T12:47:49.916105-07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "1a089193f391",
+      "name": "Schedule Evening Post",
+      "prompt": "Push evening post (5PM MST) from today's content file to X.",
+      "skills": [
+        "content_scheduler"
+      ],
+      "skill": "content_scheduler",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "55 16 * * *",
+        "display": "55 16 * * *"
+      },
+      "schedule_display": "55 16 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 11
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-27T20:53:14.502472-07:00",
+      "next_run_at": "2026-05-11T16:55:00-07:00",
+      "last_run_at": "2026-05-10T16:57:55.803929-07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "bbb877c9914b",
+      "name": "Lead Scan Morning",
+      "prompt": "Scan X and Discord for peptide questions. Auto-reply to hot leads with RN-backed value. Push warm leads to lead_followup pipeline.\n\nSTEP 0: Check xurl auth with 'xurl auth status' FIRST. If xurl is authenticated, use xurl for X scanning (best results).\n\nIf xurl is authenticated but searches return empty, that's fine \u2014 just log zero leads.\n\nIf xurl is NOT authenticated, fall back to web_search queries (site:x.com peptide questions). Be strict \u2014 only count users actively asking questions as leads.\n\nSTEP 1: Scan Discord hermes-chat channel (ID: 1484946244768895056) for peptide questions.\n\nSTEP 2: Classify leads (HOT/WARM/COLD). Deduplicate against existing lead_log.json usernames (normalize @-prefix).\n\nSTEP 3: For HOT leads with xurl auth: public reply with clinical value + RN disclaimer. Never send DMs.\n\nSTEP 4: Update lead_log.json with new entries. Recalculate overdue counts. Update dashboard.\n\nSTEP 5: Morning scan (6AM MST) typically has low volume \u2014 0-3 leads is normal. Do not fabricate leads.",
+      "skills": [
+        "lead_sniper"
+      ],
+      "skill": "lead_sniper",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 6 * * *",
+        "display": "0 6 * * *"
+      },
+      "schedule_display": "0 6 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 13
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-27T20:53:14.646468-07:00",
+      "next_run_at": "2026-05-12T06:00:00-07:00",
+      "last_run_at": "2026-05-11T12:06:56.102042-07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "4ca2214e78bc",
+      "name": "Lead Scan Midday",
+      "prompt": "Scan X and Discord for peptide questions. Auto-reply to hot leads.",
+      "skills": [
+        "lead_sniper"
+      ],
+      "skill": "lead_sniper",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 12 * * *",
+        "display": "0 12 * * *"
+      },
+      "schedule_display": "0 12 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 13
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-27T20:53:14.791881-07:00",
+      "next_run_at": "2026-05-12T12:00:00-07:00",
+      "last_run_at": "2026-05-11T12:03:06.789574-07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "bc118c2566c7",
+      "name": "Lead Scan Evening",
+      "prompt": "Scan X and Discord for peptide questions. Auto-reply to hot leads.",
+      "skills": [
+        "lead_sniper"
+      ],
+      "skill": "lead_sniper",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * *",
+        "display": "0 18 * * *"
+      },
+      "schedule_display": "0 18 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 11
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-27T20:53:14.937536-07:00",
+      "next_run_at": "2026-05-11T18:00:00-07:00",
+      "last_run_at": "2026-05-10T18:04:32.157316-07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "4f8f1279accd",
+      "name": "Lead Scan Overnight",
+      "prompt": "Scan X and Discord for peptide questions. Lower priority overnight capture.",
+      "skills": [
+        "lead_sniper"
+      ],
+      "skill": "lead_sniper",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 0 * * *",
+        "display": "0 0 * * *"
+      },
+      "schedule_display": "0 0 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 12
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-27T20:53:15.082569-07:00",
+      "next_run_at": "2026-05-12T00:00:00-07:00",
+      "last_run_at": "2026-05-11T00:04:14.586299-07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "b3f8a1c7affb",
+      "name": "Lead Nurture AM",
+      "prompt": "Check nurture tracker. Send due follow-up messages per the 5-step sequence (Day 0/2/5/9/14).",
+      "skills": [
+        "lead_followup"
+      ],
+      "skill": "lead_followup",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "display": "0 9 * * *"
+      },
+      "schedule_display": "0 9 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 14
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-27T20:53:15.226952-07:00",
+      "next_run_at": "2026-05-12T09:00:00-07:00",
+      "last_run_at": "2026-05-11T12:33:54.410540-07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "c867443fbc9e",
+      "name": "Dashboard Daily Summary",
+      "prompt": "Generate daily dashboard summary. Update all metrics from today's activity.",
+      "skills": [
+        "nurserob_dashboard_manager"
+      ],
+      "skill": "nurserob_dashboard_manager",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 21 * * *",
+        "display": "0 21 * * *"
+      },
+      "schedule_display": "0 21 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 12
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-27T20:53:15.372384-07:00",
+      "next_run_at": "2026-05-11T21:00:00-07:00",
+      "last_run_at": "2026-05-10T21:04:14.466346-07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "0116a00191b7",
+      "name": "FDA Weekly Scan",
+      "prompt": "Run weekly FDA peptide/GLP-1 scan. Search FDA compounding, warning letters, drug shortages, and PCAC. Save to ~/NurseRob_PeptideEmpire/fda_alerts/.",
+      "skills": [
+        "fda_monitor"
+      ],
+      "skill": "fda_monitor",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * 1",
+        "display": "0 8 * * 1"
+      },
+      "schedule_display": "0 8 * * 1",
+      "repeat": {
+        "times": null,
+        "completed": 3
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-27T20:53:15.519889-07:00",
+      "next_run_at": "2026-05-18T08:00:00-07:00",
+      "last_run_at": "2026-05-11T12:06:39.897661-07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "b90f811c3ac0",
+      "name": "Pharmacy Outreach Weekly",
+      "prompt": "Check pharmacy outreach pipeline. Send due emails per the 5-email sequence.",
+      "skills": [
+        "pharmacy-outreach-automator"
+      ],
+      "skill": "pharmacy-outreach-automator",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * 2",
+        "display": "0 10 * * 2"
+      },
+      "schedule_display": "0 10 * * 2",
+      "repeat": {
+        "times": null,
+        "completed": 2
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-27T20:53:15.665074-07:00",
+      "next_run_at": "2026-05-12T10:00:00-07:00",
+      "last_run_at": "2026-05-05T10:05:21.828320-07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "b7b116c1b3de",
+      "name": "Pharmacy Scout Biweekly",
+      "prompt": "Run compounding pharmacy discovery and verification. Verify licenses and PCAB accreditation.",
+      "skills": [
+        "pharmacy_scout"
+      ],
+      "skill": "pharmacy_scout",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * 3",
+        "display": "0 9 * * 3"
+      },
+      "schedule_display": "0 9 * * 3",
+      "repeat": {
+        "times": null,
+        "completed": 2
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-27T20:53:15.809229-07:00",
+      "next_run_at": "2026-05-13T09:00:00-07:00",
+      "last_run_at": "2026-05-06T09:15:39.891775-07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "310c9648b0de",
+      "name": "Affiliate Weekly Report",
+      "prompt": "Check all affiliate links, clicks, and conversions. Update dashboard with revenue estimates.",
+      "skills": [
+        "nurserob_affiliate_manager"
+      ],
+      "skill": "nurserob_affiliate_manager",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 17 * * 0",
+        "display": "0 17 * * 0"
+      },
+      "schedule_display": "0 17 * * 0",
+      "repeat": {
+        "times": null,
+        "completed": 2
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-27T20:53:15.955777-07:00",
+      "next_run_at": "2026-05-17T17:00:00-07:00",
+      "last_run_at": "2026-05-10T17:03:37.914496-07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "48f0ef333cfe",
+      "name": "Weekly Analytics Report",
+      "prompt": "Generate weekly performance report. Save to ~/NurseRob_PeptideEmpire/reports/.",
+      "skills": [
+        "nurserob_analytics"
+      ],
+      "skill": "nurserob_analytics",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * 0",
+        "display": "0 18 * * 0"
+      },
+      "schedule_display": "0 18 * * 0",
+      "repeat": {
+        "times": null,
+        "completed": 2
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-27T20:53:16.099811-07:00",
+      "next_run_at": "2026-05-17T18:00:00-07:00",
+      "last_run_at": "2026-05-10T18:04:36.187053-07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "7e200a12172d",
+      "name": "Monthly Content Batch",
+      "prompt": "Generate full 30-day content calendar for the new month using creative-mode. 60 posts (2/day) with text and images. Use the content_batch_generator skill.",
+      "skills": [
+        "content_batch_generator",
+        "image_generator"
+      ],
+      "skill": "content_batch_generator",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 1 * *",
+        "display": "0 8 1 * *"
+      },
+      "schedule_display": "0 8 1 * *",
+      "repeat": {
+        "times": null,
+        "completed": 1
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-27T20:53:16.245109-07:00",
+      "next_run_at": "2026-06-01T08:00:00-07:00",
+      "last_run_at": "2026-05-01T08:37:39.253698-07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "d6cd60ff0551",
+      "name": "Welcome Email Sender",
+      "prompt": "Check the Fastmail inbox (nurse@nurserobhealth.com) for new Formspree submissions from the Wolverine Stack Calculator. For each new submission, extract the user's email, send a welcome email via himalaya with the guide link (https://nurserobhealth.com/guide.pdf) and Cal.com consult link (https://cal.com/nurserob/peptide-consult). Mark processed emails as read/archive them. Track sent emails in /home/robert/NurseRob_PeptideEmpire/leads/welcome_sent.json. Skip any email already processed or older than 20 minutes. Max 5 per run. Never send to nurse@nurserobhealth.com or mundellrobert84@gmail.com.",
+      "skills": [
+        "welcome_email_sender"
+      ],
+      "skill": "welcome_email_sender",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "base_url": null,
+      "script": null,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 * * * *",
+        "display": "*/30 * * * *"
+      },
+      "schedule_display": "*/30 * * * *",
+      "repeat": {
+        "times": null,
+        "completed": 1118
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-04-30T23:23:54.348012-07:00",
+      "next_run_at": "2026-05-11T14:30:00-07:00",
+      "last_run_at": "2026-05-11T14:00:23.599565-07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "4e4bbf5dcb38",
+      "name": "Nurse Rob Content Optimizer (Weekly)",
+      "prompt": "Run the Nurse Rob content optimizer (Karpathy-loop) targeting peptide_content_operator/SKILL.md.\n\n1. Load peptide_content_operator skill + nurse-rob-content-optimizer skill\n2. Run SCORING PASS: generate 5 test posts using current prompts, score against rubric, record baseline\n3. Run optimization loop: 15 iterations (early stop at 3 consecutive <0.5 delta)\n   - Per iteration: make ONE targeted change to SKILL.md (voice/tone, hook strategy, CTA language, thread structure, engagement formats, pillar weights)\n   - Generate 5 test posts (1 thread + 2 engagement + 2 short-form)\n   - Score against rubric (Medical Accuracy 20 + Voice 20 + Hook 20 + CTA 20 + Signature 20)\n   - Keep if composite > baseline, discard if <= baseline\n   - Auto-discard if Medical Accuracy < 10\n   - Never modify: disclaimers, RN credential requirement, file paths, rubric, medical accuracy rules, liability section\n4. Save report: /mnt/c/Users/Robert/Desktop/Daily Brief/NurseRob_PeptideEmpire/optimizer/YYYY-MM-DD_report.md\n5. Save the optimized SKILL.md (use patch tool for targeted edits)\n\nIMPORTANT: Stop early if 3 consecutive iterations produce <0.5 composite delta \u2014 structural wins happen in first 5-10 iterations. A 10-iteration run that nets +14 is better than 30 iterations that net +15 with 20 wasted calls.",
+      "skills": [
+        "nurse-rob-content-optimizer",
+        "peptide_content_operator"
+      ],
+      "skill": "nurse-rob-content-optimizer",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 2 * * 0",
+        "display": "0 2 * * 0"
+      },
+      "schedule_display": "0 2 * * 0",
+      "repeat": {
+        "times": null,
+        "completed": 1
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-08T03:19:03.092940-07:00",
+      "next_run_at": "2026-05-17T02:00:00-07:00",
+      "last_run_at": "2026-05-10T17:29:37.176339-07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": {
+        "platform": "discord",
+        "chat_id": "1502227373377192009",
+        "chat_name": "Crypto is the Future / #hermes-chat / Hermes update",
+        "thread_id": "1502227373377192009"
+      },
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "699fe4c70e62",
+      "name": "Discord Gateway Watchdog",
+      "prompt": "",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "base_url": null,
+      "script": "discord_watchdog.py",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/10 * * * *",
+        "display": "*/10 * * * *"
+      },
+      "schedule_display": "*/10 * * * *",
+      "repeat": {
+        "times": null,
+        "completed": 170
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-08T12:49:36.502018-07:00",
+      "next_run_at": "2026-05-11T14:20:00-07:00",
+      "last_run_at": "2026-05-11T14:10:28.351185-07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": null,
+      "enabled_toolsets": null,
+      "workdir": null
+    },
+    {
+      "id": "c038d43687db",
+      "name": "Empire Recovery Watchdog",
+      "prompt": "Run the empire recovery protocol. Load the empire-recovery skill and follow it exactly. Check for failed cron jobs in the last 6 hours. If internet is reachable, re-run eligible jobs. Skip the Discord watchdog (699fe4c70e62) and this recovery job itself. Max 3 recovery attempts per job per day.",
+      "skills": [
+        "empire-recovery"
+      ],
+      "skill": "empire-recovery",
+      "model": "deepseek-v4-flash",
+      "provider": "deepseek",
+      "base_url": null,
+      "script": null,
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "*/30 * * * *",
+        "display": "*/30 * * * *"
+      },
+      "schedule_display": "*/30 * * * *",
+      "repeat": {
+        "times": null,
+        "completed": 4
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-05-11T12:08:24.376279-07:00",
+      "next_run_at": "2026-05-11T14:30:00-07:00",
+      "last_run_at": "2026-05-11T14:00:27.609828-07:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "origin",
+      "origin": null,
+      "enabled_toolsets": [
+        "web",
+        "terminal",
+        "file",
+        "skills",
+        "cronjob"
+      ],
+      "workdir": null
+    }
+  ],
+  "updated_at": "2026-05-11T14:10:28.351445-07:00"
+}

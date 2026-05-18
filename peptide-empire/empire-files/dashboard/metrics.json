@@ -1,0 +1,310 @@
+{
+  "last_updated": "2026-05-17T21:02:07.646069-07:00",
+  "_attention": "\u2705 Day complete \u2014 2/2 posts, all weekly crons ran today",
+  "degraded_mode": {
+    "xurl": false,
+    "x_scan_status": "OK",
+    "discord_scan_status": "OK",
+    "impact": ""
+  },
+  "degraded_note": "Blocker cleared",
+  "degraded_fix": null,
+  "days_blocked": 0,
+  "audience": {
+    "x_followers": 1250,
+    "email_list": 0,
+    "discord": 0,
+    "note": "X followers from xurl whoami"
+  },
+  "content": {
+    "posts_today": 2,
+    "posts_posted": 2,
+    "posts_this_week": 6,
+    "posts_week": "6 posted (May 11-17)",
+    "engagement_rate": "N/A",
+    "top_post": "Lead Magnet Promo \u2014 Stacking Smarter",
+    "last_generated": "2026-05-17T07:03:00-07:00",
+    "file": "2026-05-17_posts.md",
+    "slots": "morning=POSTED, evening=POSTED",
+    "posting_status": "\ud83d\udfe2 OK \u2014 both posts live",
+    "last_post_time": "2026-05-18T07:06:30-07:00",
+    "posting_blocked": false,
+    "blocker": "",
+    "block_reason": "",
+    "setup_command": "",
+    "day_of_block": ""
+  },
+  "leads": {
+    "lead_sniper": {
+      "xurl_status": "operational",
+      "xurl_authenticated": true,
+      "xurl_note": "OAuth2 tokens valid \u2014 API calls working",
+      "web_search_status": "N/A \u2014 xurl operational",
+      "dual_failure_consecutive_scans": 0,
+      "total_pipeline": 78,
+      "hot_total": 19,
+      "warm_total": 32,
+      "cold_total": 27,
+      "replied_this_scan": 1,
+      "new_this_scan": 1,
+      "overdue_followups": 46,
+      "hot_overdue": 17,
+      "last_scan": "2026-05-18T13:03:18.295767+00:00",
+      "last_scan_time_mst": "12:00 MST",
+      "scan_type": "xurl_api",
+      "x_scan_status": "OK \u2014 1 warm lead found",
+      "discord_scan_status": "OK \u2014 0 matches in 6hr window",
+      "last_scan_leads": 1,
+      "last_scan_replies": 1
+    },
+    "xurl_authenticated": true,
+    "xurl_installed": true,
+    "xurl_note": "OAuth2 tokens valid",
+    "web_search_status": "N/A \u2014 xurl used directly",
+    "dual_failure_consecutive_scans": 0
+  },
+  "revenue_mtd": {
+    "consults": {
+      "amount": 0,
+      "count": 0
+    },
+    "digital": {
+      "amount": 0,
+      "count": 0
+    },
+    "affiliate": {
+      "amount": 0,
+      "clicks_total": 0,
+      "conversions": 0,
+      "links_active": 0
+    },
+    "coaching": {
+      "amount": 0
+    }
+  },
+  "pharmacy": {
+    "scouted_verified": 10,
+    "outreach_active": 0,
+    "needs_manual": 0,
+    "intro_emails_sent": 0,
+    "last_outreach": "2026-05-13",
+    "negotiating": 0,
+    "partners_live": 0,
+    "pipeline_note": "12 total, 10 verified"
+  },
+  "fda": {
+    "last_scan": "2026-05-11",
+    "alerts_found": true,
+    "critical_pending": 0,
+    "files_present": [
+      "2026-05-11_fda_scan.md",
+      "2026-05-11_fda_response_content.md"
+    ]
+  },
+  "lead_followup": {
+    "status": "\ud83d\udfe2 READY \u2014 awaiting email capture from replies",
+    "pipeline_stalled": false,
+    "note": "xurl authenticated. Pipeline operational."
+  },
+  "cron_status": {
+    "daily": {
+      "daily_content_generation": {
+        "name": "Daily Content Generation",
+        "schedule": "0 7 * * *",
+        "last_run": "2026-05-17T07:04:07.833606-07:00",
+        "status": "ok",
+        "next_run": "2026-05-18T07:00:00-07:00"
+      },
+      "schedule_morning_post": {
+        "name": "Schedule Morning Post (9AM)",
+        "schedule": "55 8 * * *",
+        "last_run": "2026-05-17T09:00:05.933096-07:00",
+        "status": "ok",
+        "next_run": "2026-05-18T08:55:00-07:00"
+      },
+      "schedule_evening_post": {
+        "name": "Schedule Evening Post",
+        "schedule": "55 16 * * *",
+        "last_run": "2026-05-17T16:57:19.351006-07:00",
+        "status": "ok",
+        "next_run": "2026-05-18T16:55:00-07:00"
+      },
+      "lead_scan_morning": {
+        "name": "Lead Scan Morning",
+        "schedule": "0 6 * * *",
+        "last_run": "2026-05-13T09:23:05.445687-07:00",
+        "status": "ok",
+        "next_run": "2026-05-18T06:00:00-07:00"
+      },
+      "lead_scan_midday": {
+        "name": "Lead Scan Midday",
+        "schedule": "0 12 * * *",
+        "last_run": "2026-05-17T12:02:48.873267-07:00",
+        "status": "ok",
+        "next_run": "2026-05-18T12:00:00-07:00"
+      },
+      "lead_nurture_am": {
+        "name": "Lead Nurture AM",
+        "schedule": "0 9 * * *",
+        "last_run": "2026-05-17T09:01:24.543444-07:00",
+        "status": "ok",
+        "next_run": "2026-05-18T09:00:00-07:00"
+      },
+      "welcome_email_sender": {
+        "name": "Welcome Email Sender",
+        "schedule": "*/30 * * * *",
+        "last_run": "2026-05-17T21:01:11.931998-07:00",
+        "status": "ok",
+        "next_run": "2026-05-17T21:30:00-07:00"
+      },
+      "dashboard_daily_summary": {
+        "name": "Dashboard Daily Summary",
+        "schedule": "0 21 * * *",
+        "last_run": "2026-05-16T21:03:18.661607-07:00",
+        "status": "ok",
+        "next_run": "2026-05-18T21:00:00-07:00"
+      }
+    },
+    "weekly": {
+      "fda_weekly_scan": {
+        "name": "FDA Weekly Scan",
+        "schedule": "0 8 * * 1",
+        "last_run": "2026-05-11T12:06:39.897661-07:00",
+        "status": "ok",
+        "next_run": "2026-05-18T08:00:00-07:00"
+      },
+      "pharmacy_outreach_weekly": {
+        "name": "Pharmacy Outreach Weekly",
+        "schedule": "0 10 * * 2",
+        "last_run": "2026-05-12T10:01:49.816140-07:00",
+        "status": "ok",
+        "next_run": "2026-05-19T10:00:00-07:00"
+      },
+      "pharmacy_scout_biweekly": {
+        "name": "Pharmacy Scout Biweekly",
+        "schedule": "0 9 * * 3",
+        "last_run": "2026-05-13T09:18:49.807217-07:00",
+        "status": "ok",
+        "next_run": "2026-05-20T09:00:00-07:00"
+      },
+      "affiliate_weekly_report": {
+        "name": "Affiliate Weekly Report",
+        "schedule": "0 17 * * 0",
+        "last_run": "2026-05-17T17:02:05.232960-07:00",
+        "status": "ok",
+        "next_run": "2026-05-24T17:00:00-07:00"
+      },
+      "weekly_analytics_report": {
+        "name": "Weekly Analytics Report",
+        "schedule": "0 18 * * 0",
+        "last_run": "2026-05-17T18:03:34.894388-07:00",
+        "status": "ok",
+        "next_run": "2026-05-24T18:00:00-07:00"
+      },
+      "content_optimizer_weekly": {
+        "name": "Nurse Rob Content Optimizer (Weekly)",
+        "schedule": "0 2 * * 0",
+        "last_run": "2026-05-17T02:05:23.155861-07:00",
+        "status": "ok",
+        "next_run": "2026-05-24T02:00:00-07:00"
+      }
+    },
+    "monthly": {
+      "monthly_content_batch": {
+        "name": "Monthly Content Batch",
+        "schedule": "0 8 1 * *",
+        "last_run": "2026-05-01T08:37:39.253698-07:00",
+        "status": "ok",
+        "next_run": "2026-06-01T08:00:00-07:00"
+      }
+    },
+    "system": {
+      "discord_gateway_watchdog": {
+        "name": "Discord Gateway Watchdog",
+        "schedule": "*/10 * * * *",
+        "last_run": "2026-05-17T21:00:23.141256-07:00",
+        "status": "ok",
+        "next_run": "2026-05-17T21:10:00-07:00"
+      },
+      "empire_recovery_watchdog": {
+        "name": "Empire Recovery Watchdog",
+        "schedule": "*/30 * * * *",
+        "last_run": "2026-05-17T21:00:50.678465-07:00",
+        "status": "ok",
+        "next_run": "2026-05-17T21:30:00-07:00"
+      },
+      "cron_error_alert": {
+        "name": "Cron Error Alert",
+        "schedule": "*/30 * * * *",
+        "last_run": "2026-05-17T21:00:23.185078-07:00",
+        "status": "ok",
+        "next_run": "2026-05-17T21:30:00-07:00"
+      },
+      "cron_health_summary": {
+        "name": "Cron Health Summary",
+        "schedule": "0 9,21 * * *",
+        "last_run": "2026-05-17T21:00:23.837303-07:00",
+        "status": "ok",
+        "next_run": "2026-05-18T09:00:00-07:00"
+      }
+    }
+  },
+  "alerts": {
+    "critical": [],
+    "warning": [
+      "\u26a0\ufe0f 17 HOT leads overdue for follow-up",
+      "\u26a0\ufe0f Content gap: 2026-05-08 (no content file)",
+      "\u26a0\ufe0f Lead Scan Morning stale \u2014 last run May 13 (4 days ago)",
+      "\u26a0\ufe0f Discord delivery failures: GSC SEO Alert, Empire Daily Brief (404 channel)"
+    ],
+    "good": [
+      "\u2705 Day complete: 2/2 posts posted for May 17",
+      "\u2705 Week complete: 6/6 posts this week (Mon\u2013Sun, resumed May 15)",
+      "\u2705 Morning: Lead Magnet Promo \u2014 Stacking Smarter (10 tweets, posted 8:57 AM)",
+      "\u2705 Evening: Short Form \u2014 NAD+ Timing (posted 4:55 PM)",
+      "\u2705 Affiliate Weekly Report ran today (May 17 @ 5:02 PM)",
+      "\u2705 Weekly Analytics Report ran today (May 17 @ 6:03 PM)",
+      "\u2705 Content Optimizer ran today (May 17 @ 2:05 AM)",
+      "\u2705 Content file exists for 2026-05-17 (created 07:03)",
+      "\u2705 All 18 tracked cron jobs reporting ok",
+      "\u2705 10 pharmacies verified",
+      "\u2705 Lead pipeline active: 77 total (19 hot, 31 warm, 27 cold)",
+      "\u2705 Welcome email sender operational (2 total sent)",
+      {
+        "type": "posting",
+        "message": "May 18 \u2014 both posts posted successfully",
+        "timestamp": "2026-05-18T07:06:30-07:00"
+      }
+    ]
+  },
+  "_affiliate_report": "affiliate_report_2026-05-17.md",
+  "_affiliate_report_status": "Generated successfully \u2014 all metrics at zero (affiliate program not yet active)",
+  "weekly_report": {
+    "report_generated": "2026-05-17T18:03:24-07:00",
+    "report_file": "weekly_report_2026-05-17.md",
+    "week": "May 11 - May 17, 2026",
+    "week_number": 4,
+    "posts_generated_week": 14,
+    "posts_published_week": 6,
+    "revenue_week": 0,
+    "leads_pipeline_total": 77,
+    "hot_leads": 19,
+    "warm_leads": 31,
+    "cold_leads": 27,
+    "content_gap_days": 0,
+    "pharmacies_scouted": 12,
+    "pharmacies_active": 2,
+    "pharmacies_partners": 0,
+    "affiliate_clicks_week": 0,
+    "affiliate_revenue": 0,
+    "critical_blocker": "No monetization infrastructure (Stripe/Gumroad not configured, 0 affiliate links)",
+    "automation_rate_pct": 100,
+    "trend_direction": "up (posting restored, pipeline growing)",
+    "x_followers": 1250,
+    "gsc_impressions_28d": 4,
+    "gsc_clicks_28d": 0,
+    "overdue_followups": 45,
+    "hot_overdue": 17
+  },
+  "last_updated_by": "weekly_analytics_report"
+}

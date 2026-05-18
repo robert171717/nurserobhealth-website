@@ -1,0 +1,172 @@
+{
+  "last_error": "",
+  "days_blocked": 0,
+  "status": "POSTING_OK \u2014 both posts live",
+  "error": "Resolved \u2014 xurl OAuth2 token active via nurse-rob app",
+  "fix": null,
+  "2026-05-15": {
+    "date": "2026-05-15",
+    "day": "Friday",
+    "mix": "Research Thread + Hot Take",
+    "posts_generated": 2,
+    "posts_posted": 2,
+    "auth_status": "POSTED_OK",
+    "reason": "Both posts posted successfully",
+    "slots": {
+      "morning": {
+        "slot": "morning",
+        "time": "2026-05-15T09:00:00-07:00",
+        "platform": "x",
+        "content_type": "thread",
+        "title": "BPC-157: What the Research Actually Shows",
+        "status": "POSTED",
+        "validation": "PASSED (8 tweets, all \u2264264 chars)",
+        "post_id": "2055288157097136483",
+        "tweet_count": 8,
+        "posted_at": "2026-05-15T07:06:09-07:00",
+        "url": "https://x.com/NurseRobHealth/status/2055288157097136483"
+      },
+      "evening": {
+        "slot": "evening",
+        "time": "2026-05-15T17:00:00-07:00",
+        "platform": "x",
+        "content_type": "hot_take",
+        "title": "Peptide Stacking Overhype",
+        "status": "POSTED",
+        "validation": "PASSED (262 chars, all 280 limit)",
+        "post_id": "2055288590037299284",
+        "tweet_count": 1,
+        "posted_at": "2026-05-15T07:06:09-07:00",
+        "url": "https://x.com/NurseRobHealth/status/2055288590037299284"
+      }
+    },
+    "content_file": "/home/robert/NurseRob_PeptideEmpire/content/2026-05-15_posts.md",
+    "desktop_file": "/mnt/c/Users/Robert/Desktop/Daily Brief/NurseRob_PeptideEmpire/content/2026-05-15_posts.md",
+    "last_attempt": "2026-05-15T07:06:09-07:00"
+  },
+  "2026-05-16": {
+    "date": "2026-05-16",
+    "day": "Saturday",
+    "mix": "Case Study + Behind-the-Scenes",
+    "posts_generated": 2,
+    "posts_posted": 2,
+    "auth_status": "OK \u2014 posted successfully",
+    "reason": "Both posts posted successfully",
+    "slots": {
+      "morning": {
+        "slot": "morning",
+        "time": "2026-05-16T09:00:00-07:00",
+        "platform": "x",
+        "content_type": "case_study_thread",
+        "title": "Gray Market Peptides: A Clinical Reality Check",
+        "status": "POSTED",
+        "validation": "PASSED (7 tweets, all \u2264280 chars, disclaimer+CTA present)",
+        "post_id": "2055678714709475669",
+        "tweet_count": 7,
+        "posted_at": "2026-05-16T08:57:46-07:00",
+        "url": "https://x.com/NurseRobHealth/status/2055678714709475669"
+      },
+      "evening": {
+        "slot": "evening",
+        "time": "2026-05-16T17:00:00-07:00",
+        "platform": "x",
+        "content_type": "behind_the_scenes",
+        "title": "The Hope Gap Nobody Talks About",
+        "status": "POSTED",
+        "validation": "PASSED (233 chars, disclaimer+CTA present)",
+        "post_id": "2055799568374136890",
+        "tweet_count": 1,
+        "posted_at": "2026-05-16T16:57:29-07:00",
+        "url": "https://x.com/NurseRobHealth/status/2055799568374136890"
+      }
+    },
+    "content_file": "/home/robert/NurseRob_PeptideEmpire/content/2026-05-16_posts.md",
+    "desktop_file": "/mnt/c/Users/Robert/Desktop/Daily Brief/NurseRob_PeptideEmpire/content/2026-05-16_posts.md",
+    "last_attempt": "2026-05-16T16:57:29-07:00",
+    "status": "POSTED_FULLY"
+  },
+  "2026-05-17": {
+    "date": "2026-05-17",
+    "day": "Sunday",
+    "mix": "Lead Magnet Promo Thread + Short Form (NAD+ Timing)",
+    "posts_generated": 2,
+    "posts_posted": 2,
+    "auth_status": "POSTED_OK",
+    "reason": "Both posts posted successfully",
+    "slots": {
+      "morning": {
+        "slot": "morning",
+        "time": "2026-05-17T09:00:00-07:00",
+        "platform": "x",
+        "content_type": "thread",
+        "title": "Lead Magnet Promo \u2014 Stacking Smarter",
+        "status": "POSTED",
+        "validation": "PASSED (10 tweets, all \u2264280 chars, disclaimer+CTA present, no flagged words)",
+        "post_id": "2056041283857092644",
+        "tweet_count": 10,
+        "posted_at": "2026-05-17T08:56:56-07:00",
+        "url": "https://x.com/NurseRobHealth/status/2056041283857092644"
+      },
+      "evening": {
+        "slot": "evening",
+        "time": "2026-05-17T17:00:00-07:00",
+        "platform": "x",
+        "content_type": "short_form",
+        "title": "Short Form \u2014 NAD+ Timing",
+        "status": "POSTED",
+        "validation": "PASSED (262 chars, disclaimer+CTA present, no flagged words)",
+        "post_id": "2056161936765526308",
+        "tweet_count": 1,
+        "posted_at": "2026-05-17T16:55:00-07:00",
+        "url": "https://x.com/NurseRobHealth/status/2056161936765526308"
+      }
+    },
+    "content_file": "/home/robert/NurseRob_PeptideEmpire/content/2026-05-17_posts.md",
+    "desktop_file": "/mnt/c/Users/Robert/Desktop/Daily Brief/NurseRob_PeptideEmpire/content/2026-05-17_posts.md",
+    "last_attempt": "2026-05-17T16:55:00-07:00"
+  },
+  "2026-05-18": {
+    "date": "2026-05-18",
+    "day": "Monday",
+    "mix": "Research Thread (TB-500 Mechanism) + Poll (Research Habits)",
+    "posts_generated": 2,
+    "posts_posted": 2,
+    "auth_status": "POSTED_OK \u2014 both posts live",
+    "reason": "Morning thread posted successfully + Evening poll posted",
+    "slots": {
+      "morning": {
+        "slot": "morning",
+        "time": "2026-05-18T09:00:00-07:00",
+        "platform": "x",
+        "content_type": "thread",
+        "title": "TB-500's Real Mechanism \u2014 Cell Migration Guide",
+        "status": "POSTED",
+        "validation": "PASSED (8 tweets, all \u2264279 chars, disclaimer+CTA present, no flagged words)",
+        "post_id": "2056375712983007383",
+        "tweet_count": 8,
+        "posted_at": "2026-05-18T07:05:30-07:00",
+        "url": "https://x.com/NurseRobHealth/status/2056375712983007383"
+      },
+      "evening": {
+        "slot": "evening",
+        "time": "2026-05-18T17:00:00-07:00",
+        "platform": "x",
+        "content_type": "poll",
+        "title": "Poll \u2014 What do you research before trying a new peptide?",
+        "status": "POSTED",
+        "validation": "PASSED (228 chars body, 4 options all \u226425 chars, disclaimer present)",
+        "post_id": "2056376051912085949",
+        "tweet_count": 1,
+        "posted_at": "2026-05-18T07:06:30-07:00",
+        "url": "https://x.com/NurseRobHealth/status/2056376051912085949"
+      }
+    },
+    "content_file": "/home/robert/NurseRob_PeptideEmpire/content/2026-05-18_posts.md",
+    "desktop_file": "/mnt/c/Users/Robert/Desktop/Daily Brief/NurseRob_PeptideEmpire/content/2026-05-18_posts.md",
+    "images": [
+      "/mnt/c/Users/Robert/Desktop/Daily Brief/NurseRob_PeptideEmpire/images/2026-05-18_post1.jpg",
+      "/mnt/c/Users/Robert/Desktop/Daily Brief/NurseRob_PeptideEmpire/images/2026-05-18_post2.jpg"
+    ],
+    "last_attempt": "2026-05-18T07:05:00-07:00"
+  }
+}

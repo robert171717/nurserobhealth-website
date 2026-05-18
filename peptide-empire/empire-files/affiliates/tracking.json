@@ -1,0 +1,95 @@
+{
+  "report_generated": "2026-05-17T17:00:00.000000-07:00",
+  "total_affiliate_links": 0,
+  "total_clicks_all_time": 0,
+  "total_clicks_this_week": 0,
+  "total_conversions": 0,
+  "total_revenue_estimate": 0,
+  "blockers": [
+    "Day 5 Monetization Setup incomplete \u2014 no affiliate links configured in any category",
+    "nurserob_affiliate_manager skill missing \u2014 cron ran via fallback (no skill installed)",
+    "No partner_registry.json created \u2014 no affiliate partnerships formalized",
+    "Stripe/Gumroad/ConvertKit not configured \u2014 no payment infrastructure",
+    "Pharmacy pipeline at Stage 0 \u2014 none reached affiliate partnership stage"
+  ],
+  "next_steps": [
+    "Complete Day 5 Monetization Setup (Blueprint \u00a7Day 5)",
+    "Create/install nurserob_affiliate_manager skill for future weekly crons",
+    "Create partner_registry.json with first 2-3 affiliate partners (peptide suppliers, lab testing)",
+    "Configure Stripe/Gumroad payment links",
+    "Add first affiliate links to content rotation (thread bottom CTAs, bio link)",
+    "Advance pharmacy pipeline from Stage 0 to Stage 3 (affiliate proposal)"
+  ],
+  "categories": [
+    {
+      "category": "peptide_suppliers",
+      "label": "Peptide Suppliers (Research Chemical Companies)",
+      "commission_range": "15-30%",
+      "links_configured": 0,
+      "partners": [],
+      "clicks_total": 0,
+      "clicks_this_week": 0,
+      "conversions": 0,
+      "conversion_value": 0,
+      "revenue_estimate": 0,
+      "status": "not_configured",
+      "note": "No affiliate links configured. Day 5 monetization setup not yet completed."
+    },
+    {
+      "category": "lab_testing",
+      "label": "Lab Testing Services (Blood Work Panels)",
+      "commission_range": "15-30%",
+      "links_configured": 0,
+      "partners": [],
+      "clicks_total": 0,
+      "clicks_this_week": 0,
+      "conversions": 0,
+      "conversion_value": 0,
+      "revenue_estimate": 0,
+      "status": "not_configured",
+      "note": "No affiliate links configured."
+    },
+    {
+      "category": "supplements",
+      "label": "Supplement Brands (NAC, NAD+, Magnesium)",
+      "commission_range": "15-30%",
+      "links_configured": 0,
+      "partners": [],
+      "clicks_total": 0,
+      "clicks_this_week": 0,
+      "conversions": 0,
+      "conversion_value": 0,
+      "revenue_estimate": 0,
+      "status": "not_configured",
+      "note": "No affiliate links configured."
+    },
+    {
+      "category": "biohacking_gear",
+      "label": "Biohacking Gear (Red Light Therapy, Cold Plunge)",
+      "commission_range": "15-30%",
+      "links_configured": 0,
+      "partners": [],
+      "clicks_total": 0,
+      "clicks_this_week": 0,
+      "conversions": 0,
+      "conversion_value": 0,
+      "revenue_estimate": 0,
+      "status": "not_configured",
+      "note": "No affiliate links configured."
+    },
+    {
+      "category": "pharmacy_partners",
+      "label": "Pharmacy Affiliate Partnerships",
+      "commission_range": "15-30%",
+      "links_configured": 0,
+      "partners": [],
+      "clicks_total": 0,
+      "clicks_this_week": 0,
+      "conversions": 0,
+      "conversion_value": 0,
+      "revenue_estimate": 0,
+      "status": "not_configured",
+      "note": "10 pharmacies verified but no affiliate partnerships yet. Pipeline at Stage 0."
+    }
+  ]
+}

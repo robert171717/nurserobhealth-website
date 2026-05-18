@@ -1,0 +1,485 @@
+[
+  {
+    "lead_id": "test_lead_001",
+    "username": "@biohacker_joe",
+    "platform": "x",
+    "email": null,
+    "captured": "2026-04-27T14:00:00Z",
+    "interest": "BPC-157 dosing",
+    "classification": "warm",
+    "nurture_stage": 1,
+    "stage_history": [
+      {
+        "stage": 1,
+        "sent": "2026-04-27T14:00:00Z",
+        "channel": "dm"
+      }
+    ],
+    "responded": false,
+    "consult_booked": false,
+    "status": "expired",
+    "nurture_checks": [
+      {
+        "checked_at": "2026-05-01T17:02:46.303114+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 4 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-03T10:00:00Z",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 6 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-04T17:01:35.560855+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 7 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-05T10:00:00+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 9 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-06T17:00:58.556447+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 10 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-07T17:01:24.996105+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 11 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-10T17:01:50+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 14 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-11T19:33:07Z",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 15 of xurl outage. Lead expired \u2014 full 14-day nurture window elapsed since Stage 1 with no email captured."
+      }
+    ],
+    "notes": "Expired \u2014 full 14-day nurture window elapsed (Apr 27 \u2192 May 11). Stage 1 was sent via DM (now prohibited). No email address was ever captured due to xurl outage. Lead removed from active sequence."
+  },
+  {
+    "lead_id": "test_lead_002",
+    "username": "@peptide_curious",
+    "platform": "x",
+    "email": null,
+    "captured": "2026-04-25T10:00:00Z",
+    "interest": "Semaglutide safety",
+    "classification": "warm",
+    "nurture_stage": 2,
+    "stage_history": [
+      {
+        "stage": 1,
+        "sent": "2026-04-25T10:00:00Z",
+        "channel": "dm"
+      },
+      {
+        "stage": 2,
+        "sent": "2026-04-27T10:00:00Z",
+        "channel": "dm"
+      }
+    ],
+    "responded": false,
+    "consult_booked": false,
+    "status": "expired",
+    "nurture_checks": [
+      {
+        "checked_at": "2026-05-01T17:02:46.303114+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 4 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-03T10:00:00Z",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 6 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-04T17:01:35.560855+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 7 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-05T10:00:00+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 9 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-06T17:00:58.556447+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 10 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-07T17:01:24.996105+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 11 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-10T17:01:50+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 14 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-11T19:33:07Z",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 15 of xurl outage."
+      }
+    ],
+    "notes": "Expired after 15 days with no email captured (pipeline blocked entire window)."
+  },
+  {
+    "lead_id": "lead_0428_004",
+    "username": "@alextatem",
+    "platform": "x",
+    "email": null,
+    "captured": "2026-04-28T13:04:45.163136+00:00",
+    "interest": "Peptide stacking optimization / side effects",
+    "classification": "warm",
+    "nurture_stage": 0,
+    "stage_history": [],
+    "responded": false,
+    "consult_booked": false,
+    "status": "expired",
+    "notes": "Expired \u2014 14-day nurture window elapsed (Apr 28 \u2192 May 12). No email ever captured. xurl was down the entire window. Now restored but too late for this lead.",
+    "nurture_checks": [
+      {
+        "checked_at": "2026-05-01T17:02:46.303114+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 4 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-03T10:00:00Z",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 6 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-04T17:01:35.560855+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 7 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-05T10:00:00+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 9 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-06T17:00:58.556447+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 10 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-07T17:01:24.996105+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 11 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-10T17:01:50+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 14 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-11T19:33:07Z",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 15 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-12T16:03:55+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl now operational, but lead never provided email. Captured 14 days ago \u2014 nurture window fully elapsed. Marking expired."
+      }
+    ]
+  },
+  {
+    "lead_id": "lead_0429_001",
+    "username": "@mylesxstute",
+    "platform": "x",
+    "email": null,
+    "captured": "2026-04-29T07:05:22.264156+00:00",
+    "interest": "Peptide app ecosystem critique \u2014 seeking better tools",
+    "classification": "warm",
+    "nurture_stage": 0,
+    "stage_history": [],
+    "responded": false,
+    "consult_booked": false,
+    "status": "expired",
+    "notes": "Expired \u2014 captured Apr 29, no email ever provided. xurl outage prevented email capture for 15+ days. By the time xurl was restored (May 12), lead was 13 days old. Too stale to start nurture.",
+    "nurture_checks": [
+      {
+        "checked_at": "2026-05-01T17:02:46.303114+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 4 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-03T10:00:00Z",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 6 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-04T17:01:35.560855+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 7 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-05T10:00:00+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 9 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-06T17:00:58.556447+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 10 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-07T17:01:24.996105+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 11 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-10T17:01:50+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 14 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-11T19:33:07Z",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 15 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-12T16:03:55+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl now operational, but lead never provided email. Captured 13 days ago \u2014 cannot start a 14-day nurture sequence. Full window would go to Day 27. Marking expired."
+      }
+    ]
+  },
+  {
+    "lead_id": "lead_0429_002",
+    "username": "@BagCalls",
+    "platform": "x",
+    "email": null,
+    "captured": "2026-04-29T07:05:22.264156+00:00",
+    "interest": "Peptide stack optimization \u2014 Reta, MOTS-C, NAD+ dosing",
+    "classification": "warm",
+    "nurture_stage": 0,
+    "stage_history": [],
+    "responded": false,
+    "consult_booked": false,
+    "status": "expired",
+    "notes": "Expired \u2014 captured Apr 29, no email ever provided. xurl outage prevented email capture for 15+ days. By the time xurl was restored (May 12), lead was 13 days old. Too stale to start nurture.",
+    "nurture_checks": [
+      {
+        "checked_at": "2026-05-01T17:02:46.303114+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 4 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-03T10:00:00Z",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 6 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-04T17:01:35.560855+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 7 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-05T10:00:00+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 9 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-06T17:00:58.556447+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 10 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-07T17:01:24.996105+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 11 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-10T17:01:50+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 14 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-11T19:33:07Z",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl OAuth2 not authenticated \u2014 cannot capture emails. Day 15 of xurl outage."
+      },
+      {
+        "checked_at": "2026-05-12T16:03:55+00:00",
+        "emails_available": 0,
+        "emails_sent": 0,
+        "pipeline_blocked": true,
+        "block_reason": "xurl now operational, but lead never provided email. Captured 13 days ago \u2014 cannot start a 14-day nurture sequence. Marking expired."
+      }
+    ]
+  },
+  {
+    "lead_id": "lead_0514_001",
+    "username": "Wolverine Stack Calculator Lead",
+    "platform": "formspree",
+    "email": "robrobrob1717@yahoo.com",
+    "captured": "2026-05-14T02:31:05Z",
+    "interest": "Wolverine Stack Calculator signup \u2014 peptide stack optimization",
+    "classification": "warm",
+    "nurture_stage": 2,
+    "stage_history": [
+      {
+        "stage": 1,
+        "sent": "2026-05-14T02:31:05Z",
+        "channel": "email",
+        "note": "Welcome email with Wolverine Stack Guide sent via welcome_email_sender"
+      },
+      {
+        "stage": 2,
+        "sent": "2026-05-16T09:00:00Z",
+        "channel": "email",
+        "note": "Social Proof email \u2014 Stage 2 of 5-step nurture sequence"
+      }
+    ],
+    "responded": false,
+    "consult_booked": false,
+    "status": "active",
+    "nurture_checks": [
+      {
+        "checked_at": "2026-05-14T16:01:39Z",
+        "emails_available": 1,
+        "emails_sent": 0,
+        "pipeline_blocked": false,
+        "note": "1 active lead (calculator signup) at Stage 1. Stage 2 (Social Proof) due 2026-05-16. No emails due today."
+      },
+      {
+        "checked_at": "2026-05-15T09:00:00+00:00",
+        "emails_available": 1,
+        "emails_sent": 0,
+        "pipeline_blocked": false,
+        "note": "Stage 1 sent May 14. Stage 2 (Social Proof) due May 16. No emails due today."
+      },
+      {
+        "checked_at": "2026-05-16T09:00:00Z",
+        "emails_available": 1,
+        "emails_sent": 1,
+        "pipeline_blocked": false,
+        "note": "Stage 2 (Social Proof) sent to robrobrob1717@yahoo.com \u2014 Day 2 of nurture sequence. Next: Stage 3 (Soft Offer) due May 19."
+      }
+    ]
+  },
+  {
+    "lead_id": "lead_20260517_001",
+    "username": "Wolverine Stack Calculator Lead",
+    "platform": "formspree",
+    "email": "kurtmundell@gmail.com",
+    "captured": "2026-05-17T20:01:02Z",
+    "interest": "Wolverine Stack Calculator signup \u2014 peptide stack optimization",
+    "classification": "warm",
+    "nurture_stage": 1,
+    "stage_history": [
+      {
+        "stage": 1,
+        "sent": "2026-05-17T20:01:02Z",
+        "channel": "email",
+        "note": "Welcome email with Wolverine Stack Guide sent via welcome_email_sender"
+      }
+    ],
+    "responded": false,
+    "consult_booked": false,
+    "status": "active",
+    "nurture_checks": [
+      {
+        "checked_at": "2026-05-18T16:00:28Z",
+        "emails_available": 1,
+        "emails_sent": 0,
+        "pipeline_blocked": false,
+        "note": "Bridged from welcome_sent.json. Welcome email (Stage 1) sent 2026-05-17T20:01:02Z. Stage 2 (Social Proof) due 2026-05-19."
+      }
+    ]
+  }
+]

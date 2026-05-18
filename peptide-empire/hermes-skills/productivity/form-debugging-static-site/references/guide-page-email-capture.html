@@ -1,0 +1,61 @@
+<!--
+  Drop-in email capture section for SEO guide pages.
+  Copy this into any long-form content page before the footer CTA.
+  Requires: Formspree form ID (replace FORM_ID), page-specific source value.
+  JS: Add the corresponding handler block from SKILL.md Step 5.
+-->
+
+<!-- Email Capture -->
+<section class="mb-16">
+  <div class="max-w-2xl mx-auto">
+    <div id="guide-post-submit-success" class="hidden mb-8 p-6 bg-teal/10 border-2 border-teal rounded-2xl text-center">
+      <div class="text-green-600 text-lg font-bold mb-2">✅ Check your inbox!</div>
+      <p class="text-body mb-3">Your [RESOURCE NAME] + 12-page PDF guide is on its way.</p>
+      <a href="/guide.pdf" class="inline-block bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-3 rounded-full text-sm transition">📥 Download PDF Guide →</a>
+    </div>
+
+    <div id="guide-email-form-wrap" class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 text-center">
+      <h3 class="text-2xl font-bold text-navy-900 mb-2">📧 Get Your Free [RESOURCE NAME]</h3>
+      <p class="text-body mb-6">Enter your email for [VALUE PROP]. Includes the 12-page PDF guide.</p>
+      <form id="guide-email-form" action="https://formspree.io/f/FORM_ID" method="POST" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+        <input type="hidden" name="_next" value="https://[DOMAIN]/[PAGE]?thanks=true">
+        <input type="hidden" name="source" value="[PAGE-SOURCE]">
+        <input type="email" name="email" placeholder="your@email.com" required class="flex-1 bg-offwhite border border-gray-200 rounded-full px-4 py-3 text-sm outline-none focus:border-teal">
+        <button type="submit" class="bg-teal hover:bg-teal-dark text-white font-semibold px-6 py-3 rounded-full text-sm whitespace-nowrap transition">Send My Guide →</button>
+      </form>
+      <p class="text-muted text-xs mt-3">📧 Your email is private. Educational resource — not medical advice.</p>
+    </div>
+  </div>
+</section>
+
+<!--
+  JS handler (add before </body>):
+  
+  <script>
+  (function() {
+    var form = document.getElementById('guide-email-form');
+    if (form) {
+      form.addEventListener('submit', function() {
+        sessionStorage.setItem('mysite_guide_thanks', 'true');
+      });
+    }
+    var successDiv = document.getElementById('guide-post-submit-success');
+    var formWrap = document.getElementById('guide-email-form-wrap');
+    if (!successDiv || !formWrap) return;
+    function showThanks() {
+      if (sessionStorage.getItem('mysite_guide_thanks') === 'true') {
+        sessionStorage.removeItem('mysite_guide_thanks');
+        formWrap.classList.add('hidden');
+        successDiv.classList.remove('hidden');
+        setTimeout(function() {
+          successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+      }
+    }
+    showThanks();
+    window.addEventListener('pageshow', function(e) {
+      if (e.persisted) showThanks();
+    });
+  })();
+  </script>
+-->
